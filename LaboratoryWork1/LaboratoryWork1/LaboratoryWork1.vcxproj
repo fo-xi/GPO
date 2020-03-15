@@ -151,7 +151,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Common\ReadNumber.cpp" />
     <ClCompile Include="AddressesAndPointers.cpp" />
     <ClCompile Include="Arrays.cpp" />
     <ClCompile Include="Debug.cpp" />

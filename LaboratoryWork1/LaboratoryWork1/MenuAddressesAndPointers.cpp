@@ -24,128 +24,128 @@ void MenuAddressesAndPointers()
 		cout << "7. Demonstration of passing variables to a function by pointer" << endl;
 		cout << "8. Exit" << endl;
 
-		switch (ReadNumber())
+		switch (ReadNumber<int>())
 		{
-			case 1:
+		case 1:
+		{
+			int a = 5;
+			int b = 4;
+
+			cout << "Address of a: " << &a << endl;
+			cout << "Address of b: " << &b << endl;
+
+			double c = 13.5;
+			cout << "Address of c: " << &c << endl;
+
+			bool d = true;
+			cout << "Address of d: " << &d << endl;
+
+			system("pause");
+			break;
+		}
+		case 2:
+		{
+			int a[10] = { 1, 2, 7, -1, 5, 3, -1, 7, 1, 6 };
+			cout << "Size of int type: " << sizeof(int) << endl;
+			for (int i = 0; i < 10; i++)
 			{
-				int a = 5;
-				int b = 4;
-
-				cout << "Address of a: " << &a << endl;
-				cout << "Address of b: " << &b << endl;
-
-				double c = 13.5;
-				cout << "Address of c: " << &c << endl;
-
-				bool d = true;
-				cout << "Address of d: " << &d << endl;
-
-				system("pause");
-				break;
+				cout << "Address of a[" << i << "]: " << &a[i] << endl;
 			}
-			case 2:
+			cout << endl;
+			cout << "Size of double type: " << sizeof(double) << endl;
+			double b[10] = { 1.0, 2.0, 7.0, -1.0, 5.0, 3.5, -1.8, 7.2, 1.9, 6.2 };
+			for (int i = 0; i < 10; i++)
 			{
-				int a[10] = { 1, 2, 7, -1, 5, 3, -1, 7, 1, 6 };
-				cout << "Size of int type: " << sizeof(int) << endl;
-				for (int i = 0; i < 10; i++)
-				{
-					cout << "Address of a[" << i << "]: " << &a[i] << endl;
-				}
-				cout << endl;
-				cout << "Size of double type: " << sizeof(double) << endl;
-				double b[10] = { 1.0, 2.0, 7.0, -1.0, 5.0, 3.5, -1.8, 7.2, 1.9, 6.2 };
-				for (int i = 0; i < 10; i++)
-				{
-					cout << "Address of b[" << i << "]: " << &b[i] << endl;
-				}
-
-				system("pause");
-				break;
+				cout << "Address of b[" << i << "]: " << &b[i] << endl;
 			}
-			case 3:
-			{
-				int a = 5;
-				int& b = a;
 
-				cout << "Address of a: " << &a << endl;
-				cout << "Address of b: " << &b << endl;
+			system("pause");
+			break;
+		}
+		case 3:
+		{
+			int a = 5;
+			int& b = a;
 
-				cout << endl;
-				b = 7;
-				cout << "Value of a: " << a << endl;
+			cout << "Address of a: " << &a << endl;
+			cout << "Address of b: " << &b << endl;
 
-				system("pause");
-				break;
-			}
-			case 4:
-			{
-				double a = 5.0;
-				cout << "Address of a in main(): " << &a << endl;
-				cout << "Value of a in main(): " << a << endl;
-				cout << endl;
+			cout << endl;
+			b = 7;
+			cout << "Value of a: " << a << endl;
 
-				Foo1(a);
+			system("pause");
+			break;
+		}
+		case 4:
+		{
+			double a = 5.0;
+			cout << "Address of a in main(): " << &a << endl;
+			cout << "Value of a in main(): " << a << endl;
+			cout << endl;
 
-				cout << endl;
-				cout << "Value of a in main(): " << a << endl;
+			Foo1(a);
 
-				system("pause");
-				break;
-			}
-			case 5:
-			{
-				double a = 5.0;
-				cout << "Address of a in main(): " << &a << endl;
-				cout << "Value of a in main(): " << a << endl;
-				cout << endl;
+			cout << endl;
+			cout << "Value of a in main(): " << a << endl;
 
-				Foo2(a);
+			system("pause");
+			break;
+		}
+		case 5:
+		{
+			double a = 5.0;
+			cout << "Address of a in main(): " << &a << endl;
+			cout << "Value of a in main(): " << a << endl;
+			cout << endl;
 
-				cout << endl;
-				cout << "Value of a in main(): " << a << endl;
+			Foo2(a);
 
-				system("pause");
-				break;
-			}
-			case 6:
-			{
-				int a = 5;
-				int* pointer = &a;
+			cout << endl;
+			cout << "Value of a in main(): " << a << endl;
 
-				cout << "Address of a: " << &a << endl;
-				cout << "Address in pointer: " << pointer << endl;
-				cout << "Address of pointer: " << &pointer << endl;
+			system("pause");
+			break;
+		}
+		case 6:
+		{
+			int a = 5;
+			int* pointer = &a;
 
-				cout << endl;
-				*pointer = 7;
-				cout << "Value in a: " << a << endl;
-				cout << "Value by pointer address: " << *pointer << endl;
+			cout << "Address of a: " << &a << endl;
+			cout << "Address in pointer: " << pointer << endl;
+			cout << "Address of pointer: " << &pointer << endl;
 
-				system("pause");
-				break;
-			}
-			case 7:
-			{
-				double value = 5.0;
-				double* pointer = &value;
-				cout << "Address of value in main(): " << &value << endl;
-				cout << "Address in pointer in main(): " << pointer << endl;
-				cout << "Address of pointer in main(): " << &pointer << endl;
-				cout << "Value of a in main(): " << value << endl;
+			cout << endl;
+			*pointer = 7;
+			cout << "Value in a: " << a << endl;
+			cout << "Value by pointer address: " << *pointer << endl;
 
-				Foo3(pointer);
+			system("pause");
+			break;
+		}
+		case 7:
+		{
+			double value = 5.0;
+			double* pointer = &value;
+			cout << "Address of value in main(): " << &value << endl;
+			cout << "Address in pointer in main(): " << pointer << endl;
+			cout << "Address of pointer in main(): " << &pointer << endl;
+			cout << "Value of a in main(): " << value << endl;
 
-				cout << endl;
-				cout << "Value of a in main(): " << value << endl;
+			Foo3(pointer);
 
-				system("pause");
-				break;
-			}
-			case 8:
-			{
-				isEnd = false;
-				break;
-			}
+			cout << endl;
+			cout << "Value of a in main(): " << value << endl;
+
+			system("pause");
+			break;
+		}
+		case 8:
+		{
+			isEnd = false;
+			break;
+		}
 		default:
 			break;
 		}

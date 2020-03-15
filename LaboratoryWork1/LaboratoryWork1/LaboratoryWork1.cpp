@@ -26,7 +26,7 @@ int main()
 		cout << endl;
 		cout << "SELECT AN ACTION :\t";
 
-		switch (ReadNumber())
+		switch (ReadNumber<int>())
 		{
 		case 1:
 		{
