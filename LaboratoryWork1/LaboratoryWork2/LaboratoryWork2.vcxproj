@@ -151,7 +151,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="ExceptionHandling.cpp" />
+    <ClCompile Include="Flight.cpp" />
     <ClCompile Include="LaboratoryWork2.cpp" />
+    <ClCompile Include="Movie.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="Time.cpp" />
+    <ClCompile Include="Transfers.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Desktop\GPO\LaboratoryWork1\Common\ReadNumber.h" />
+    <ClInclude Include="Circle.h" />
+    <ClInclude Include="Color.h" />
+    <ClInclude Include="DayOfTheWeek.h" />
+    <ClInclude Include="ExceptionHandling.h" />
+    <ClInclude Include="Flight.h" />
+    <ClInclude Include="Genre.h" />
+    <ClInclude Include="Movie.h" />
+    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="Season.h" />
+    <ClInclude Include="SmartphoneManufacturers.h" />
+    <ClInclude Include="Song.h" />
+    <ClInclude Include="StudentForm.h" />
+    <ClInclude Include="Time.h" />
+    <ClInclude Include="Transfers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
