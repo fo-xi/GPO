@@ -27,6 +27,7 @@ void Sort(double* values, int count)
 
 void DemoSort()
 {
+	//TODO: Дубль
 	int count = 5;
 	int negativeCount = -1;
 	double* values = new double[count] {100.0, 249.0, 12.0, 45.0, 23.5};
@@ -37,6 +38,7 @@ void DemoSort()
 
 void DemoSort2()
 {
+	//TODO: Дубль
 	int count = 5;
 	int negativeCount = -1;
 	double* values = new double[count] {100.0, 249.0, 12.0, 45.0, 23.5};

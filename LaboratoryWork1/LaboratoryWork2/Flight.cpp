@@ -87,6 +87,7 @@ void DemoDynamicFlight()
 
 void DemoDynamicFlights()
 {
+	//TODO: const?
 	int count = 4;
 	Flight* pointerFlight = new Flight[count];
 	for (int i = 0; i < count; i++)

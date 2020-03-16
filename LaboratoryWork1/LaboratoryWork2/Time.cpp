@@ -53,6 +53,7 @@ void DemoTime()
 		WriteTime(arrayTime[i]);
 		cout << endl;
 	}
+	//TODO: RSDN
 	//2.2.4.1
 	Time* pointerTime1;
 	pointerTime1 = &time1;

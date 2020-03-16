@@ -8,6 +8,7 @@ struct Movie
 {
 	string Title;
 	int DurationInMinutes;
+	//TODO: naming
 	int YearOfIssuel;
 	Genre Genre;
 	double Rating;

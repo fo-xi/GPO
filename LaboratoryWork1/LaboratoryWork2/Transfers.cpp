@@ -7,26 +7,32 @@ using namespace std;
 void DemoEnums()
 {
 	Color color = Red;
+	//TODO: RSDN
 	Color arrayColor[6]
 	{ Red, Green, Blue, Orange, Purple, Green };
 
 	DayOfTheWeek dayOfTheWeek = Wednesday;
+	//TODO: RSDN
 	DayOfTheWeek arrayDayOfTheWeek[6]
 	{ Wednesday, Thursday, Saturday, Monday, Friday, Sunday };
 
 	Genre genre = Horror;
+	//TODO: RSDN
 	Genre arrayGenre[6]
 	{ Comedy, Drama, Thriller, Horror, Blockbuster, ActionMovie };
 
 	StudentForm studentForm = Distance;
+	//TODO: RSDN
 	StudentForm arrayStudentForm[4]
 	{ FullTime, Distance, Evening, Extramural };
 
 	SmartphoneManufacturers smartphoneManufacturers = Apple;
+	//TODO: RSDN
 	SmartphoneManufacturers arraySmartphoneManufacturers[6]
 	{ Apple, Samsung, Xiaomi, Sony, Huawei, Nokia };
 
 	Season season = Spring;
+	//TODO: RSDN
 	Season arraySeason[4]
 	{ Autumn, Summer, Winter, Spring };
 }
@@ -35,6 +41,7 @@ void WriteColor(Color color)
 {
 	switch (color)
 	{
+		//TODO: RSDN
 	case Red:
 	{
 		cout << "Red color" << endl;
@@ -82,6 +89,7 @@ Color ReadColor()
 
 	switch (ReadNumber<int>())
 	{
+		//TODO: RSDN
 	case 0:
 	{
 		color = Red;
@@ -124,6 +132,7 @@ Color ReadColor()
 		cout << "Purple color" << endl;
 		break;
 	}
+		//TODO: default?
 	}
 	return color;
 }
@@ -157,8 +166,10 @@ int CountColor(Color* colors, int count, Color findedColor)
 void DemoCountColor()
 {
 	const int count = 11;
+	//TODO: RSDN
 	Color arrayColor[count]
 	{ Red, Purple, Green, Blue, Red, Red, Red, Orange, Purple, Green, Orange };
 
+	//TODO: RSDN
 	cout << "Quantity:\t" << CountColor(arrayColor, count, Green) << endl;
 }
