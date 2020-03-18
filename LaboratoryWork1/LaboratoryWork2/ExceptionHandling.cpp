@@ -3,6 +3,8 @@
 #include "ExceptionHandling.h"
 
 using namespace std;
+const int COUNT = 5;
+const int negativeCount = -1;
 
 void Sort(double* values, int count)
 {
@@ -25,24 +27,25 @@ void Sort(double* values, int count)
 	}
 }
 
+double* ÑreatArray()
+{
+	double* values = new double[COUNT] {100.0, 249.0, 12.0, 45.0, 23.5};
+	return values;
+}
+
 void DemoSort()
 {
-	//TODO: Äóáëü
-	int count = 5;
-	int negativeCount = -1;
-	double* values = new double[count] {100.0, 249.0, 12.0, 45.0, 23.5};
-
-	Sort(values, count);
+	//TODO: Äóáëü (+)
+	double* values = ÑreatArray();
+	Sort(values, COUNT);
 	Sort(values, negativeCount);
+	delete[] values;
 }
 
 void DemoSort2()
 {
-	//TODO: Äóáëü
-	int count = 5;
-	int negativeCount = -1;
-	double* values = new double[count] {100.0, 249.0, 12.0, 45.0, 23.5};
-
+	//TODO: Äóáëü (+)
+	double* values = ÑreatArray();
 	try
 	{
 		Sort(values, negativeCount);
@@ -52,4 +55,5 @@ void DemoSort2()
 		cout << "Exception catched!" << endl
 			<< exception.what() << endl;
 	}
+	delete[] values;
 }
