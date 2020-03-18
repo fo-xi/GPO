@@ -117,11 +117,9 @@ void DemoMovie()
 		cout << endl;
 	}
 	//2.2.4.1
-	Movie* pointerMovie1;
-	pointerMovie1 = &movie1;
+	Movie* pointerMovie1 = &movie1;
 	//2.2.4.2
-	Movie* pointer2Movie1;
-	pointer2Movie1 = &movie1;
+	Movie* pointer2Movie1 = &movie1;
 	cout << "The address that is stored in the first pointer to the structure: "
 		<< pointerMovie1 << "\n"
 		<< "The address that is stored in the first pointer to the structure: "
