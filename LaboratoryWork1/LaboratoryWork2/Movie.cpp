@@ -11,38 +11,40 @@ Genre ReadGenre()
 
 	switch (ReadNumber<int>())
 	{
-		//TODO: RSDN
-	case 0:
-	{
-		genre = Comedy;
-		break;
-	}
-	case 1:
-	{
-		genre = Drama;
-		break;
-	}
-	case 2:
-	{
-		genre = Thriller;
-		break;
-	}
-	case 3:
-	{
-		genre = ActionMovie;
-		break;
-	}
-	case 4:
-	{
-		genre = Horror;
-		break;
-	}
-	case 5:
-	{
-		genre = Blockbuster;
-		break;
-	}
-		//TODO: default?
+		//TODO: RSDN (+)
+		case 0:
+		{
+			genre = Comedy;
+			break;
+		}
+		case 1:
+		{
+			genre = Drama;
+			break;
+		}
+		case 2:
+		{
+			genre = Thriller;
+			break;
+		}
+		case 3:
+		{
+			genre = ActionMovie;
+			break;
+		}
+		case 4:
+		{
+			genre = Horror;
+			break;
+		}
+		case 5:
+		{
+			genre = Blockbuster;
+			break;
+		}
+		//TODO: default? (+)
+		default:
+			break;
 	}
 	return genre;
 }
@@ -53,22 +55,22 @@ void WriteMovie(Movie& movie)
 		<< "DurationInMinutes:\t" << movie.DurationInMinutes << "\n"
 		<< "Genre:\t" << movie.Genre << "\n"
 		<< "Rating:\t" << movie.Rating << "\n"
-		<< "YearOfIssuel:\t" << movie.YearOfIssuel << endl;
+		<< "Year:\t" << movie.Year << endl;
 }
 
 void ReadMovie(Movie& movie)
 {
-	cout << "Title ->\t";
+	cout << "Title:\t";
 	cin >> movie.Title;
-	cout << "DurationInMinutes ->\t";
+	cout << "DurationInMinutes:\t";
 	movie.DurationInMinutes = ReadNumber<int>();
-	cout << "Genre ->\t";
+	cout << "Genre:\t";
 	movie.Genre = ReadGenre();
-	cout << "Rating ->\t";
+	cout << "Rating:\t";
 	movie.Rating = ReadNumber<double>();
-	//TODO: naming
-	cout << "YearOfIssuel ->\t";
-	movie.YearOfIssuel = ReadNumber<int>();
+	//TODO: naming (+)
+	cout << "Year:\t";
+	movie.Year = ReadNumber<int>();
 }
 
 void DemoMovie()
@@ -79,7 +81,7 @@ void DemoMovie()
 	movie1.DurationInMinutes = 210;
 	movie1.Genre = Drama;
 	movie1.Rating = 8.4;
-	movie1.YearOfIssuel = 1997;
+	movie1.Year = 1997;
 	//2.2.3.2
 	Movie movie2;
 	cout << "Title:\t";
@@ -90,15 +92,15 @@ void DemoMovie()
 	movie2.Genre = ReadGenre();
 	cout << "Rating:\t";
 	movie2.Rating = ReadNumber<double>();
-	cout << "YearOfIssuel:\t";
-	movie2.YearOfIssuel = ReadNumber<int>();
+	cout << "Year:\t";
+	movie2.Year = ReadNumber<int>();
 
 	cout << endl;
 	cout << "Title:\t" << movie2.Title << "\n"
 		<< "DurationInMinutes:\t" << movie2.DurationInMinutes << "\n"
-		<< "Genre:\t" << movie2.YearOfIssuel << "\n"
-		<< "Rating:\t" << movie2.Genre << "\n"
-		<< "YearOfIssuel:\t" << movie2.Rating << endl;
+		<< "Genre:\t" << movie2.Genre << "\n"
+		<< "Rating:\t" << movie2.Rating << "\n"
+		<< "Year:\t" << movie2.Year << endl;
 	cout << endl;
 	//2.2.3.3
 	const int count = 3;
@@ -126,12 +128,12 @@ void DemoMovie()
 		<< pointer2Movie1 << endl;
 }
 
-Movie* MakeMovie(string title, int durationInMinutes, int yearOfIssuel, Genre genre, double rating)
+Movie* MakeMovie(string title, int durationInMinutes, int year, Genre genre, double rating)
 {
 	Movie* movie = new Movie();
 	movie->Title = title;
 	movie->DurationInMinutes = durationInMinutes;
-	movie->YearOfIssuel = yearOfIssuel;
+	movie->Year = year;
 	movie->Genre = genre;
 	movie->Rating = rating;
 	WriteMovie(*movie);
@@ -143,7 +145,7 @@ Movie* CopyFlight(Movie& movie)
 	Movie* copiedMovie = new Movie();
 	copiedMovie->Title = movie.Title;
 	copiedMovie->DurationInMinutes = movie.DurationInMinutes;
-	copiedMovie->YearOfIssuel = movie.YearOfIssuel;
+	copiedMovie->Year = movie.Year;
 	copiedMovie->Genre = movie.Genre;
 	copiedMovie->Rating = movie.Rating;
 	WriteMovie(*copiedMovie);
@@ -171,10 +173,11 @@ void DemoMovieWithGenre()
 	movie1.DurationInMinutes = 210;
 	movie1.Genre = Horror;
 	movie1.Rating = 8.4;
-	movie1.YearOfIssuel = 1997;
+	movie1.Year = 1997;
 	//2.2.9.3
-	//TODO: RSDN
-	Movie* movie2 = MakeMovie("Witch", 96, 2005, Drama, 3.4);
+	//TODO: RSDN (+)
+	Movie* movie2 = 
+		MakeMovie("Witch", 96, 2005, Drama, 3.4);
 	delete movie2;
 	//2.2.9.4
 	cout << endl;

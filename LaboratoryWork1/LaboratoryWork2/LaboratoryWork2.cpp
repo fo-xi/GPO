@@ -37,108 +37,108 @@ int main()
 		cout << "17. Read Color" << endl;
 		switch (ReadNumber<int>())
 		{
-			//TODO: RSDN
-		case 1:
-		{
-			DemoSort();
-			break;
-		}
-		case 2:
-		{
-			DemoSort2();
-			break;
-		}
-		case 3:
-		{
-			DemoFlight();
-			system("pause");
-			break;
-		}
-		case 4:
-		{
-			DemoMovie();
-			system("pause");
-			break;
-		}
-		case 5:
-		{
-			DemoRectangle();
-			system("pause");
-			break;
-		}
-		case 6:
-		{
-			DemoTime();
-			system("pause");
-			break;
-		}
-		case 7:
-		{
-			WrongPointers();
-			break;
-		}
-		case 8:
-		{
-			DemoReadAndWriteRectangles();
-			system("pause");
-			break;
-		}
-		case 9:
-		{
-			DemoDynamicFlight();
-			system("pause");
-			break;
-		}
-		case 10:
-		{
-			DemoDynamicFlights();
-			system("pause");
-			break;
-		}
-		case 11:
-		{
-			MakeRectangle(12, 13, "Red");
-			system("pause");
-			break;
-		}
-		case 12:
-		{
-			MakeFlight("Tomsk", "Novosibirsk", 40);
-			system("pause");
-			break;
-		}
-		case 13:
-		{
-			MakeMovie("Jumanji", 119, 2018, Comedy, 6.4);
-			system("pause");
-			break;
-		}
-		case 14:
-		{
-			MakeTime(13, 45, 23);
-			system("pause");
-			break;
-		}
-		case 15:
-		{
-			DemoCountColor();
-			system("pause");
-			break;
-		}
-		case 16:
-		{
-			DemoMovieWithGenre();
-			system("pause");
-			break;
-		}
-		case 17:
-		{
-			ReadColor();
-			system("pause");
-			break;
-		}
-		default:
-			break;
+			//TODO: RSDN (+)
+			case 1:
+			{
+				DemoSort();
+				break;
+			}
+			case 2:
+			{
+				DemoSort2();
+				break;
+			}
+			case 3:
+			{
+				DemoFlight();
+				system("pause");
+				break;
+			}
+			case 4:
+			{
+				DemoMovie();
+				system("pause");
+				break;
+			}
+			case 5:
+			{
+				DemoRectangle();
+				system("pause");
+				break;
+			}
+			case 6:
+			{
+				DemoTime();
+				system("pause");
+				break;
+			}
+			case 7:
+			{
+				WrongPointers();
+				break;
+			}
+			case 8:
+			{
+				DemoReadAndWriteRectangles();
+				system("pause");
+				break;
+			}
+			case 9:
+			{
+				DemoDynamicFlight();
+				system("pause");
+				break;
+			}
+			case 10:
+			{
+				DemoDynamicFlights();
+				system("pause");
+				break;
+			}
+			case 11:
+			{
+				MakeRectangle(12, 13, "Red");
+				system("pause");
+				break;
+			}
+			case 12:
+			{
+				MakeFlight("Tomsk", "Novosibirsk", 40);
+				system("pause");
+				break;
+			}
+			case 13:
+			{
+				MakeMovie("Jumanji", 119, 2018, Comedy, 6.4);
+				system("pause");
+				break;
+			}
+			case 14:
+			{
+				MakeTime(13, 45, 23);
+				system("pause");
+				break;
+			}
+			case 15:
+			{
+				DemoCountColor();
+				system("pause");
+				break;
+			}
+			case 16:
+			{
+				DemoMovieWithGenre();
+				system("pause");
+				break;
+			}
+			case 17:
+			{
+				ReadColor();
+				system("pause");
+				break;
+			}
+			default:
+				break;
 		}
 	}
 	return 0;

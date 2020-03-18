@@ -96,9 +96,8 @@ void DemoReadAndWriteRectangles()
 
 void Exchange(Rectangle& rectangle1, Rectangle& rectangle2)
 {
-	//TODO: RSDN
-	Rectangle swap;
-	swap = rectangle1;
+	//TODO: RSDN (+)
+	Rectangle swap = rectangle1;
 	rectangle1 = rectangle2;
 	rectangle2 = swap;
 }

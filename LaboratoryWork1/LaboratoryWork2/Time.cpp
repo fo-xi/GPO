@@ -53,13 +53,11 @@ void DemoTime()
 		WriteTime(arrayTime[i]);
 		cout << endl;
 	}
-	//TODO: RSDN
+	//TODO: RSDN (+)
 	//2.2.4.1
-	Time* pointerTime1;
-	pointerTime1 = &time1;
+	Time* pointerTime1 = &time1;
 	//2.2.4.2
-	Time* pointer2Time1;
-	pointer2Time1 = &time1;
+	Time* pointer2Time1 = &time1;
 	cout << "The address that is stored in the first pointer to the structure: "
 		<< pointerTime1 << "\n"
 		<< "The address that is stored in the first pointer to the structure: "
