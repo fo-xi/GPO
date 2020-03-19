@@ -3,6 +3,7 @@
 #include "ExceptionHandling.h"
 
 using namespace std;
+//TODO: Почему две константы оформлены в различном стиле?
 const int COUNT = 5;
 const int negativeCount = -1;
 
@@ -35,7 +36,6 @@ double* СreatArray()
 
 void DemoSort()
 {
-	//TODO: Дубль (+)
 	double* values = СreatArray();
 	Sort(values, COUNT);
 	Sort(values, negativeCount);
@@ -44,7 +44,6 @@ void DemoSort()
 
 void DemoSort2()
 {
-	//TODO: Дубль (+)
 	double* values = СreatArray();
 	try
 	{

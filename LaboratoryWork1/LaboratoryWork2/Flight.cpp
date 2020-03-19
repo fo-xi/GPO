@@ -53,9 +53,11 @@ void DemoFlight()
 		cout << endl;
 	}
 	//2.2.4.1
+	//TODO: RSDN
 	Flight* pointerFlight1;
 	pointerFlight1 = &flight1;
 	//2.2.4.2
+	//TODO: RSDN
 	Flight* pointer2Flight1;
 	pointer2Flight1 = &flight1;
 	cout << "The address that is stored in the first pointer to the structure: "
@@ -71,6 +73,7 @@ void WrongPointers()
 {
 	Flight flight;
 	Movie movie;
+	//TODO: RSDN
 	Flight* pointerFlight;
 	Movie* pointerMovie;
 	pointerFlight = &flight;
@@ -87,7 +90,6 @@ void DemoDynamicFlight()
 
 void DemoDynamicFlights()
 {
-	//TODO: const? (+)
 	const int count = 4;
 	Flight* pointerFlight = new Flight[count];
 	for (int i = 0; i < count; i++)
@@ -118,6 +120,7 @@ void FindShortestFlight(Flight* flights, int count)
 	cout << endl;
 }
 
+//TODO: передача по значению, насколько правильно?
 Flight* MakeFlight(string departurePoint, string destination, int flightTime)
 {
 	Flight* flight = new Flight();

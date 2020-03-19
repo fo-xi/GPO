@@ -173,7 +173,6 @@ void DemoMovieWithGenre()
 	movie1.Rating = 8.4;
 	movie1.Year = 1997;
 	//2.2.9.3
-	//TODO: RSDN (+)
 	Movie* movie2 = 
 		MakeMovie("Witch", 96, 2005, Drama, 3.4);
 	delete movie2;
