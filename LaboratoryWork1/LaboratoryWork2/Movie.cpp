@@ -126,7 +126,7 @@ void DemoMovie()
 		<< pointer2Movie1 << endl;
 }
 
-Movie* MakeMovie(string title, int durationInMinutes, int year, Genre genre, double rating)
+Movie* MakeMovie(string& title, int durationInMinutes, int year, Genre genre, double rating)
 {
 	Movie* movie = new Movie();
 	movie->Title = title;
@@ -173,8 +173,9 @@ void DemoMovieWithGenre()
 	movie1.Rating = 8.4;
 	movie1.Year = 1997;
 	//2.2.9.3
+	string title = "Witch";
 	Movie* movie2 = 
-		MakeMovie("Witch", 96, 2005, Drama, 3.4);
+		MakeMovie(title, 96, 2005, Drama, 3.4);
 	delete movie2;
 	//2.2.9.4
 	cout << endl;

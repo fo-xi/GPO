@@ -96,19 +96,23 @@ int main()
 			}
 			case 11:
 			{
-				MakeRectangle(12, 13, "Red");
+				string color = "Red";
+				MakeRectangle(12, 13, color);
 				system("pause");
 				break;
 			}
 			case 12:
 			{
-				MakeFlight("Tomsk", "Novosibirsk", 40);
+				string departurePoint = "Tomsk";
+				string destination = "Novosibirsk";
+				MakeFlight(departurePoint, destination, 40);
 				system("pause");
 				break;
 			}
 			case 13:
 			{
-				MakeMovie("Jumanji", 119, 2018, Comedy, 6.4);
+				string title = "Jumanji";
+				MakeMovie(title, 119, 2018, Comedy, 6.4);
 				system("pause");
 				break;
 			}

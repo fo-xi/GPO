@@ -17,5 +17,5 @@ void WrongPointers();
 void DemoDynamicFlight();
 void DemoDynamicFlights();
 void FindShortestFlight(Flight*, int);
-Flight* MakeFlight(string, string, int);
+Flight* MakeFlight(string&, string&, int);
 Flight* CopyFlight(Flight&);

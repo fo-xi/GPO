@@ -3,9 +3,9 @@
 #include "ExceptionHandling.h"
 
 using namespace std;
-//TODO: Почему две константы оформлены в различном стиле?
+//TODO: Почему две константы оформлены в различном стиле? (+)
 const int COUNT = 5;
-const int negativeCount = -1;
+const int NEGATIVECOUNT = -1;
 
 void Sort(double* values, int count)
 {
@@ -38,7 +38,7 @@ void DemoSort()
 {
 	double* values = СreatArray();
 	Sort(values, COUNT);
-	Sort(values, negativeCount);
+	Sort(values, NEGATIVECOUNT);
 	delete[] values;
 }
 
@@ -47,7 +47,7 @@ void DemoSort2()
 	double* values = СreatArray();
 	try
 	{
-		Sort(values, negativeCount);
+		Sort(values, NEGATIVECOUNT);
 	}
 	catch (exception exception)
 	{
