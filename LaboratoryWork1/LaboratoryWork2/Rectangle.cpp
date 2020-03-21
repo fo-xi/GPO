@@ -52,10 +52,8 @@ void DemoRectangle()
 		cout << endl;
 	}
 	//2.2.4.1
-	//TODO: RSDN (+)
 	Rectangle* pointerRectangle1 = &rectangle1;
 	//2.2.4.2
-	//TODO: RSDN (+)
 	Rectangle* pointer2Rectangle1 = &rectangle1;
 	cout << "The address that is stored in the first pointer to the structure: "
 		<< pointerRectangle1 << "\n"
@@ -134,7 +132,6 @@ void FindMaxRectangle(Rectangle* rectangles, int count)
 	cout << endl;
 }
 
-//TODO: передача по значению, насколько правильно? (+)
 Rectangle* MakeRectangle(int length, int width, string& color)
 {
 	Rectangle* rectangle = new Rectangle();

@@ -53,10 +53,8 @@ void DemoFlight()
 		cout << endl;
 	}
 	//2.2.4.1
-	//TODO: RSDN (+)
 	Flight* pointerFlight1 = &flight1;
 	//2.2.4.2
-	//TODO: RSDN (+)
 	Flight* pointer2Flight1 = &flight1;
 	cout << "The address that is stored in the first pointer to the structure: "
 		<< pointerFlight1 << "\n"
@@ -71,7 +69,6 @@ void WrongPointers()
 {
 	Flight flight;
 	Movie movie;
-	//TODO: RSDN (+)
 	Flight* pointerFlight = &flight;
 	Movie* pointerMovie = &movie;
 }
@@ -116,7 +113,6 @@ void FindShortestFlight(Flight* flights, int count)
 	cout << endl;
 }
 
-//TODO: передача по значению, насколько правильно? (+)
 Flight* MakeFlight(string& departurePoint, string& destination, int flightTime)
 {
 	Flight* flight = new Flight();

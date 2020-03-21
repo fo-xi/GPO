@@ -1,6 +1,5 @@
 #include "Circle.h"
 
-//TODO: передача по значению, насколько правильно? (+)
 Circle* MakeCircle(double x, double y, double radius, string& color)
 {
 	Circle* circle = new Circle();

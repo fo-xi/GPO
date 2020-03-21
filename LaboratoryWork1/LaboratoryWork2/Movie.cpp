@@ -11,7 +11,6 @@ Genre ReadGenre()
 
 	switch (ReadNumber<int>())
 	{
-		//TODO: RSDN (+)
 		case 0:
 		{
 			genre = Comedy;
@@ -42,7 +41,6 @@ Genre ReadGenre()
 			genre = Blockbuster;
 			break;
 		}
-		//TODO: default? (+)
 		default:
 			break;
 	}
@@ -68,7 +66,6 @@ void ReadMovie(Movie& movie)
 	movie.Genre = ReadGenre();
 	cout << "Rating:\t";
 	movie.Rating = ReadNumber<double>();
-	//TODO: naming (+)
 	cout << "Year:\t";
 	movie.Year = ReadNumber<int>();
 }

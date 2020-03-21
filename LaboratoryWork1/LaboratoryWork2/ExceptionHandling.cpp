@@ -3,7 +3,6 @@
 #include "ExceptionHandling.h"
 
 using namespace std;
-//TODO: Почему две константы оформлены в различном стиле? (+)
 const int COUNT = 5;
 const int NEGATIVECOUNT = -1;
 
