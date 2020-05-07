@@ -7,6 +7,7 @@ struct Route
 {
 	int RouteNumber;
 	int AverageRoute;
+	//TODO: Опечатка
 	int RrequencyRoute;
 	string* NamesStops;
 	int NumberStops;
@@ -15,4 +16,5 @@ struct Route
 void DemoRoute();
 void ReadRouteFromConsole(Route&);
 void WriteRouteFromConsole(Route&);
+//TODO: Строку по ссылке?
 int FindRouteTo(Route*, int, string);

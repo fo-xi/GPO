@@ -14,6 +14,7 @@ Time* Time::MakeTime(int year, int month, int day, int hour, int minute)
 
 void Time::SetYear(int year)
 {
+	//TODO: Дублируется между cpp файлами
 	if (year < 0)
 	{
 		throw exception("The year can't be negative");

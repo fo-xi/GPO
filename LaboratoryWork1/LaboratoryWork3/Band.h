@@ -10,7 +10,7 @@ struct Band
 	Album** Albums = nullptr;
 	int AlbumsCount;
 };
-
+//TODO: Строку по ссылке?
 Band* MakeBand(string, string, int, Album**);
 void SetBandName(Band*, string);
 void SetDescription(Band*, string);

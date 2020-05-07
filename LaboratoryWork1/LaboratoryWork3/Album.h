@@ -10,7 +10,7 @@ struct Album
 	Song** Songs = nullptr;
 	int SongsCount;
 };
-
+//TODO: Строку по ссылке?
 Album* MakeAlbum(string, int, int, Song**);
 void SetAlbumTitle(Album*, string);
 void SetYearManufacture(Album*, int);

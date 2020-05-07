@@ -36,7 +36,7 @@ void ReadRouteFromConsole(Route& route)
 {
 	cout << "Enter the route number ->\t";
 	route.RouteNumber = ReadNumber<int>();
-
+	//TODO: Дубль
 	while (true)
 	{
 		cout << "Enter the average route length ->\t";
@@ -51,7 +51,7 @@ void ReadRouteFromConsole(Route& route)
 			cout << "0 and less than 60. Try again." << endl;
 		}
 	}
-
+	//TODO: Дубль
 	while (true)
 	{
 		cout << "Enter the frequency of the route ->\t";
@@ -66,7 +66,7 @@ void ReadRouteFromConsole(Route& route)
 			cout << "0 and less than 60. Try again." << endl;
 		}
 	}
-
+	//TODO: Дубль
 	while (true)
 	{
 		cout << "Enter the number of stops ->\t";

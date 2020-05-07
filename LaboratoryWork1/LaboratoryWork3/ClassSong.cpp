@@ -16,6 +16,7 @@ void Song::SetTitle(string songTitle)
 
 void Song::SetDuration(int duration)
 {
+	//TODO: Дублируется между cpp файлами
 	if (duration < 0)
 	{
 		throw exception("Duration cannot be negative");

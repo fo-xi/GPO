@@ -12,6 +12,7 @@ Rectangle* Rectangle::MakeRectangle(double length, double width, Point* center)
 
 void Rectangle::SetLength(double length)
 {
+	//TODO: Дубль
 	if (length < 0)
 	{
 		throw exception("Length cannot be negative");
@@ -21,6 +22,7 @@ void Rectangle::SetLength(double length)
 
 void Rectangle::SetWidth(double width)
 {
+	//TODO: Дубль
 	if (width < 0)
 	{
 		throw exception("Width cannot be negative");
@@ -58,7 +60,7 @@ void Rectangle::DemoRectangleWithPoint()
 			<< "Length = " << rectangles[i]->GetLength() << ";\t"
 			<< "Width = " << rectangles[i]->GetWidth() << ";\t" << endl;
 	}
-
+	//TODO: RSDN
 	double Xcenter = 0.0;
 	double Ycenter = 0.0;
 	for (int i = 0; i < countRectangles; i++)

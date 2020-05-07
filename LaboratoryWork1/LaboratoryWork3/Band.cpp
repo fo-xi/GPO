@@ -22,6 +22,7 @@ void SetDescription(Band* band, string description)
 
 void SetAlbums(Band* band, int albumsCount, Album** albums)
 {
+	//TODO: Дублируется между cpp файлами
 	if (albumsCount < 0)
 	{
 		throw exception("Songs count cannot be negative");
@@ -154,6 +155,7 @@ void DemoBand()
 	int allSongsCount = 0;
 	Song** allFoundSongs = GetAllSongs(band, allSongsCount);
 	cout << "Number of songs ->\t" << allSongsCount << "\n" << endl;
+	//TODO: Дубль
 	for (int i = 0; i < allSongsCount; i++)
 	{
 		cout << "Title: " << allFoundSongs[i]->SongTitle << "\t"
@@ -165,6 +167,7 @@ void DemoBand()
 	Song** allGenreSongs = GetAllGenreSongs(band, Blues, allSongsCountInGenre);
 	cout << "\nNumber of songs in genre ->\t" 
 		<< allSongsCountInGenre << "\n" << endl;
+	//TODO: Дубль
 	for (int i = 0; i < allSongsCountInGenre; i++)
 	{
 		cout << "Title: " << allGenreSongs[i]->SongTitle << "\t"

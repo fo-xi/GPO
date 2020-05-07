@@ -19,7 +19,7 @@ void Album::SetAlbumTitle(string albumTitle)
 void Album::SetYearManufacture(int yearManufacture)
 {
 	if ((yearManufacture < 0) || (yearManufacture > 2020))
-	{
+	{//TODO: Сообщение не отражает ограничения сверху
 		throw exception("Year manufacture cannot be negative");
 	}
 	this->_yearManufacture = yearManufacture;
@@ -27,6 +27,7 @@ void Album::SetYearManufacture(int yearManufacture)
 
 void Album::SetSongs(int songsCount, Song** songs)
 {
+	//TODO: Дублируется между cpp файлами
 	if (songsCount < 0)
 	{
 		throw exception("Songs count cannot be negative");

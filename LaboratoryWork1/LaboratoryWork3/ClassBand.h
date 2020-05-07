@@ -11,6 +11,7 @@ class Band
 		Album** _albums = nullptr;
 		int _albumsCount;
 	public:
+	//TODO: Строку по ссылке?
 		Band* MakeBand(string, string, int, Album**);
 		void SetBandName(string);
 		void SetDescription(string);

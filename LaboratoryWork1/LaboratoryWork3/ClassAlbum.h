@@ -10,6 +10,7 @@ class Album
 		Song** _songs = nullptr;
 		int _songsCount;
 	public:
+	//TODO: Строку по ссылке?
 		Album* MakeAlbum(string, int, int, Song**);
 		void SetAlbumTitle(string);
 		void SetYearManufacture(int);

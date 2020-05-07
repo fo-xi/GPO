@@ -11,7 +11,7 @@ struct Flight
 	Time* DepartureTime;
 	Time* ArrivalTime;
 };
-
+//TODO: Строку по ссылке?
 Flight* MakeFlight(string, string, string, Time*, Time*);
 void SetFlightNumber(Flight*, string);
 void SetPointDeparture(Flight*, string);
