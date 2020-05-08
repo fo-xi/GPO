@@ -12,7 +12,7 @@ class Time
 		int _hour;
 		int _minute;
 	public:
-		Time* MakeTime(int, int, int, int, int);
+		Time(int, int, int, int, int);
 		void SetYear(int);
 		void SetMonth(int);
 		void SetDay(int);

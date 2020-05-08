@@ -12,12 +12,12 @@ class Flight
 		Time* _departureTime;
 		Time* _arrivalTime;
 	public:
-	//TODO: Строку по ссылке?
-	//TODO: Конструктор класса не должен так называться
-		Flight* MakeFlight(string, string, string, Time*, Time*);
-		void SetFlightNumber(string);
-		void SetPointDeparture(string);
-		void SetDestination(string);
+	//TODO: Строку по ссылке? (+)
+	//TODO: Конструктор класса не должен так называться (+)
+		Flight(string&, string&, string&, Time*, Time*);
+		void SetFlightNumber(string&);
+		void SetPointDeparture(string&);
+		void SetDestination(string&);
 		void SetDepartureTime(Time*);
 		void SetArrivalTime(Time*);
 

@@ -11,8 +11,8 @@ class Rectangle
 		double _width;
 		Point* _center;
 	public:
-		//TODO:  онструктор класса не должен так называтьс€
-		Rectangle* MakeRectangle(double, double, Point*);
+		//TODO:  онструктор класса не должен так называтьс€ (+)
+		Rectangle(double, double, Point*);
 		void SetLength(double);
 		void SetWidth(double);
 		void SetCenter(Point*);

@@ -184,6 +184,9 @@
     <ClInclude Include="Flight.h" />
     <ClInclude Include="Genre.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="ReadValue.h" />
+    <ClInclude Include="ReadValuesRangeFrom0to60.h" />
+    <ClInclude Include="ReadValuesRangeFrom0to10.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Route.h" />
     <ClInclude Include="Song.h" />

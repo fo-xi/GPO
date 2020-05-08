@@ -1,33 +1,24 @@
 #include <exception>
 #include "ClassRectangle.h"
+#include "ReadValue.h"
 
-Rectangle* Rectangle::MakeRectangle(double length, double width, Point* center)
+Rectangle::Rectangle(double length, double width, Point* center)
 {
-	Rectangle* rectangle = new Rectangle();
 	this->SetLength(length);
 	this->SetWidth(width);
 	this->SetCenter(center);
-	return rectangle;
 }
 
 void Rectangle::SetLength(double length)
 {
-	//TODO: Дубль
-	if (length < 0)
-	{
-		throw exception("Length cannot be negative");
-	}
-	this->_length = length;
+	//TODO: Дубль (+)
+	this->_length = ReadValue(length);
 }
 
 void Rectangle::SetWidth(double width)
 {
-	//TODO: Дубль
-	if (width < 0)
-	{
-		throw exception("Width cannot be negative");
-	}
-	this->_width = width;
+	//TODO: Дубль (+)
+	this->_width = ReadValue(width);
 }
 
 void Rectangle::SetCenter(Point* center)
@@ -60,19 +51,19 @@ void Rectangle::DemoRectangleWithPoint()
 			<< "Length = " << rectangles[i]->GetLength() << ";\t"
 			<< "Width = " << rectangles[i]->GetWidth() << ";\t" << endl;
 	}
-	//TODO: RSDN
-	double Xcenter = 0.0;
-	double Ycenter = 0.0;
+	//TODO: RSDN (+)
+	double xCenter = 0.0;
+	double yCenter = 0.0;
 	for (int i = 0; i < countRectangles; i++)
 	{
-		Xcenter += rectangles[i]->GetCenter()->GetX();
-		Ycenter += rectangles[i]->GetCenter()->GetY();
+		xCenter += rectangles[i]->GetCenter()->GetX();
+		yCenter += rectangles[i]->GetCenter()->GetY();
 	}
 
-	Xcenter /= countRectangles;
-	Ycenter /= countRectangles;
-	cout << "\nXcenter = " << Xcenter
-		<< ";\t" << "Ycenter = " << Ycenter << "\n" << endl;
+	xCenter /= countRectangles;
+	yCenter /= countRectangles;
+	cout << "\nXcenter = " << xCenter
+		<< ";\t" << "Ycenter = " << yCenter << "\n" << endl;
 	for (int i = 0; i < countCenters; i++)
 	{
 		delete centers[i];

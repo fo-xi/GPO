@@ -7,7 +7,7 @@ class Point
 		double _x;
 		double _y;
 	public:
-		Point* MakePoint(double, double);
+		Point(double, double);
 
 		void SetX(double);
 		void SetY(double);

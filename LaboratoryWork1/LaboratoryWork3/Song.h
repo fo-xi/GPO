@@ -11,8 +11,8 @@ struct Song
 	int Duration;
 	Genre Genre;
 };
-//TODO: Строку по ссылке?
-Song* MakeSong(string, int, Genre);
-void SetTitle(Song*, string);
+//TODO: Строку по ссылке? (+)
+Song* MakeSong(string&, int, Genre);
+void SetTitle(Song*, string&);
 void SetDuration(Song*, int);
 void SetGenre(Song*, Genre);

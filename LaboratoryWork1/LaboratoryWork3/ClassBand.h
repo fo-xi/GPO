@@ -11,13 +11,13 @@ class Band
 		Album** _albums = nullptr;
 		int _albumsCount;
 	public:
-	//TODO: Строку по ссылке?
-		Band* MakeBand(string, string, int, Album**);
-		void SetBandName(string);
-		void SetDescription(string);
+	//TODO: Строку по ссылке? (+)
+		Band(string&, string&, int, Album**);
+		void SetBandName(string&);
+		void SetDescription(string&);
 		void SetAlbums(int, Album**);
 
-		Song* FindSong(string);
+		Song* FindSong(string&);
 		Album* FindAlbum(Song*);
 		Song** GetAllSongs(int&);
 		Song** GetAllGenreSongs(Genre, int&);

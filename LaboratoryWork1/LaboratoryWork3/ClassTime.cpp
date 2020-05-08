@@ -1,23 +1,21 @@
 #include <exception>
 #include "ClassTime.h"
 
-Time* Time::MakeTime(int year, int month, int day, int hour, int minute)
+Time::Time(int year, int month, int day, int hour, int minute)
 {
-	Time* time = new Time();
 	this->SetYear(year);
 	this->SetMonth(month);
 	this->SetDay(day);
 	this->SetHour(hour);
 	this->SetMinute(minute);
-	return time;
 }
 
 void Time::SetYear(int year)
 {
-	//TODO: Дублируется между cpp файлами
-	if (year < 0)
+	//TODO: Дублируется между cpp файлами (+)
+	if ((year < 0) || (year > 2020))
 	{
-		throw exception("The year can't be negative");
+		throw exception("Year should be positive and not more than this year");
 	}
 	this->_year = year;
 }

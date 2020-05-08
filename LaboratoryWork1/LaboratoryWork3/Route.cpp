@@ -1,5 +1,7 @@
 #include "Route.h"
 #include "..\Common\ReadNumber.h"
+#include "ReadValuesRangeFrom0to60.h"
+#include "ReadValuesRangeFrom0to10.h"
 
 void DemoRoute()
 {
@@ -36,51 +38,15 @@ void ReadRouteFromConsole(Route& route)
 {
 	cout << "Enter the route number ->\t";
 	route.RouteNumber = ReadNumber<int>();
-	//TODO: Дубль
-	while (true)
-	{
-		cout << "Enter the average route length ->\t";
-		route.AverageRoute = ReadNumber<int>();
-		if ((route.AverageRoute > 0) && (route.AverageRoute <= 60))
-		{
-			break;
-		}
-		else
-		{
-			cout << "The value must be greater than";
-			cout << "0 and less than 60. Try again." << endl;
-		}
-	}
-	//TODO: Дубль
-	while (true)
-	{
-		cout << "Enter the frequency of the route ->\t";
-		route.RrequencyRoute = ReadNumber<int>();
-		if ((route.RrequencyRoute > 0) && (route.RrequencyRoute <= 60))
-		{
-			break;
-		}
-		else
-		{
-			cout << "The value must be greater than";
-			cout << "0 and less than 60. Try again." << endl;
-		}
-	}
-	//TODO: Дубль
-	while (true)
-	{
-		cout << "Enter the number of stops ->\t";
-		route.NumberStops = ReadNumber<int>();
-		if ((route.NumberStops >= 1) and (route.NumberStops <= 10))
-		{
-			break;
-		}
-		else
-		{
-			cout << "The number of stops should";
-			cout << "be within 1-10. Try again." << endl;
-		}
-	}
+	//TODO: Дубль (+)
+	cout << "Enter the average of the route ->\t";
+	route.AverageRoute = ReadValuesRangeFrom0to60<int>();
+	//TODO: Дубль (+)
+	cout << "Enter the frequency of the route ->\t";
+	route.FrequencyRoute = ReadValuesRangeFrom0to60<int>();
+	//TODO: Дубль (+)
+	cout << "Enter the number of stops ->\t";
+	route.NumberStops = ReadValuesRangeFrom0to10<int>();
 
 	route.NamesStops = new string[route.NumberStops];
 	for (int i = 0; i < route.NumberStops; i++)
@@ -99,11 +65,11 @@ void WriteRouteFromConsole(Route& route)
 	cout << ". "
 		<< route.RouteNumber
 		<< ". " << route.AverageRoute
-		<< ". " << route.RrequencyRoute
+		<< ". " << route.FrequencyRoute
 		<< endl;
 }
 
-int FindRouteTo(Route* routes, int routesCount, string stop)
+int FindRouteTo(Route* routes, int routesCount, string& stop)
 {
 	for (int i = 0; i < routesCount; i++)
 	{

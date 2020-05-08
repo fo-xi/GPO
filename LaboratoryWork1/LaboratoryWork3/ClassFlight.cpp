@@ -1,29 +1,27 @@
 #include <exception>
 #include "ClassFlight.h"
 
-Flight* Flight::MakeFlight(string flightNumber, string pointDeparture, string destination,
+Flight::Flight(string& flightNumber, string& pointDeparture, string& destination,
 	Time* departureTime, Time* arrivalTime)
 {
-	Flight* flight = new Flight();
 	this->SetFlightNumber(flightNumber);
 	this->SetPointDeparture(pointDeparture);
 	this->SetDestination(destination);
 	this->SetDepartureTime(departureTime);
 	this->SetArrivalTime(arrivalTime);
-	return flight;
 }
 
-void Flight::SetFlightNumber(string flightNumber)
+void Flight::SetFlightNumber(string& flightNumber)
 {
 	this->_flightNumber = flightNumber;
 }
 
-void Flight::SetPointDeparture(string pointDeparture)
+void Flight::SetPointDeparture(string& pointDeparture)
 {
 	this->_pointDeparture = pointDeparture;
 }
 
-void Flight::SetDestination(string destination)
+void Flight::SetDestination(string& destination)
 {
 	this->_destination = destination;
 }
@@ -81,26 +79,48 @@ void Flight::DemoFlightWithTime()
 	arrivals[4] = arrivals[4]->MakeTime(2015, 5, 18, 12, 44);
 
 	Flight* flights[count];
-	flights[0] = MakeFlight("S578D", "Chelyabinsk", "Yekaterinburg",
-		departures[0], arrivals[0]);
-	flights[1] = MakeFlight("MRM43", "Samara", "Kazan",
-		departures[1], arrivals[1]);
-	flights[2] = MakeFlight("LF543", "Omsk", "Perm",
-		departures[2], arrivals[2]);
-	flights[3] = MakeFlight("SLD33", "Krasnoyarsk", "Saratov",
-		departures[3], arrivals[3]);
-	flights[4] = MakeFlight("R34R2", "Novosibirsk", "Izhevsk",
-		departures[4], arrivals[4]);
+
+	string flightNumber = "S578D";
+	string pointDeparture = "Chelyabinsk";
+	string destination = "Yekaterinburg";
+	flights[0] = MakeFlight(flightNumber, pointDeparture,
+		destination, departures[0], arrivals[0]);
+
+	flightNumber = "MRM43";
+	pointDeparture = "Samara";
+	destination = "Kazan";
+	flights[1] = MakeFlight(flightNumber, pointDeparture,
+		destination, departures[1], arrivals[1]);
+
+	flightNumber = "LF543";
+	pointDeparture = "Omsk";
+	destination = "Perm";
+	flights[2] = MakeFlight(flightNumber, pointDeparture,
+		destination, departures[2], arrivals[2]);
+
+	flightNumber = "SLD33";
+	pointDeparture = "Krasnoyarsk";
+	destination = "Saratov";
+	flights[3] = MakeFlight(flightNumber, pointDeparture,
+		destination, departures[3], arrivals[3]);
+
+	flightNumber = "R34R2";
+	pointDeparture = "Novosibirsk";
+	destination = "Izhevsk";
+	flights[4] = MakeFlight(flightNumber, pointDeparture,
+		destination, departures[4], arrivals[4]);
 
 	for (int i = 0; i < count; i++)
 	{
 		cout << flights[i]->GetFlightNumber() << " "
 			<< flights[i]->GetPointDeparture() << " - "
 			<< flights[i]->GetDestination() << " Departure "
+			<< flights[i]->GetDepartureTime()->GetYear() << "."
 			<< flights[i]->GetDepartureTime()->GetMonth() << "."
 			<< flights[i]->GetDepartureTime()->GetDay() << " "
 			<< flights[i]->GetDepartureTime()->GetHour() << ":"
 			<< flights[i]->GetDepartureTime()->GetMinute() << " Arrival "
+			<< flights[i]->GetArrivalTime()->GetYear() << "."
 			<< flights[i]->GetArrivalTime()->GetMonth() << "."
 			<< flights[i]->GetArrivalTime()->GetDay() << " "
 			<< flights[i]->GetArrivalTime()->GetHour() << ":"

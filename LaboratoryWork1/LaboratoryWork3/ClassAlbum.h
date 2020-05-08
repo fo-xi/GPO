@@ -10,9 +10,9 @@ class Album
 		Song** _songs = nullptr;
 		int _songsCount;
 	public:
-	//TODO: Строку по ссылке?
-		Album* MakeAlbum(string, int, int, Song**);
-		void SetAlbumTitle(string);
+	//TODO: Строку по ссылке? (+)
+		Album(string&, int, int, Song**);
+		void SetAlbumTitle(string&);
 		void SetYearManufacture(int);
 		void SetSongs(int, Song**);
 

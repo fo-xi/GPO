@@ -1,11 +1,9 @@
 #include "ClassPoint.h"
 
-Point* Point::MakePoint(double x, double y)
+Point::Point(double x, double y)
 {
-	Point* point = new Point();
 	this->SetX(x);
 	this->SetY(y);
-	return point;
 }
 
 void Point::SetX(double x)

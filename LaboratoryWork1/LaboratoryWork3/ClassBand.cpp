@@ -1,36 +1,31 @@
 #include "ClassBand.h"
+#include "ReadValue.h"
 
-Band* Band::MakeBand(string bandName, string description, int albumsCount, Album** albums)
+Band::Band(string& bandName, string& description, int albumsCount, Album** albums)
 {
-	Band* band = new Band;
 	this->SetBandName(bandName);
 	this->SetDescription(description);
 	this->SetAlbums(albumsCount, albums);
-	return band;
 }
 
-void Band::SetBandName(string bandName)
+void Band::SetBandName(string& bandName)
 {
 	this->_bandName = bandName;
 }
 
-void Band::SetDescription(string description)
+void Band::SetDescription(string& description)
 {
 	this->_description = description;
 }
 
 void Band::SetAlbums(int albumsCount, Album** albums)
 {
-	//TODO: Дублируется между cpp файлами
-	if (albumsCount < 0)
-	{
-		throw exception("Songs count cannot be negative");
-	}
-	this->_albumsCount = albumsCount;
+	//TODO: Дублируется между cpp файлами (+)
+	this->_albumsCount = ReadValue(albumsCount);
 	this->_albums = albums;
 }
 
-Song* Band::FindSong(string songTitle)
+Song* Band::FindSong(string& songTitle)
 {
 	for (int i = 0; i < this->GetAlbumsCount(); i++)
 	{
@@ -112,36 +107,67 @@ Song** Band::GetAllGenreSongs(Genre findingGenre, int& allSongsCountInGenre)
 	return allSongs;
 }
 
+void WriteSongs(Song* song)
+{
+	cout << "Title: " << song->GetTitle() << "\t"
+		<< "Duration: " << song->GetDuration() << "\t"
+		<< "Genre: " << song->GetGenre() << endl;
+}
+
 void Band::DemoBand()
 {
 	const int songsCount = 4;
 	Song** song1 = new Song * [songsCount];
-	song1[0] = song1[0]->MakeSong("Unfunny Clown", 200, Blues);
-	song1[1] = song1[1]->MakeSong("Cute Clown", 210, Jazz);
-	song1[2] = song1[2]->MakeSong("Beautiful Clown", 203, Rap);
-	song1[3] = song1[3]->MakeSong("Scary Clown", 179, Rap);
+
+	string songTitle1 = "Unfunny Clown";
+	string songTitle2 = "Cute Clown";
+	string songTitle3 = "Beautiful Clown";
+	string songTitle4 = "Scary Clown";
+
+	song1[0] = song1[0]->MakeSong(songTitle1, 200, Blues);
+	song1[1] = song1[1]->MakeSong(songTitle2, 210, Jazz);
+	song1[2] = song1[2]->MakeSong(songTitle3, 203, Rap);
+	song1[3] = song1[3]->MakeSong(songTitle4, 179, Rap);
 
 	Song** song2 = new Song * [songsCount];
-	song2[0] = song2[0]->MakeSong("Watermelon", 185, Rap);
-	song2[1] = song2[1]->MakeSong("Peach", 193, Chanson);
-	song2[2] = song2[2]->MakeSong("Tasteless Banana", 167, Blues);
-	song2[3] = song2[3]->MakeSong("Kiwi", 212, Rock);
+
+	songTitle1 = "Watermelon";
+	songTitle2 = "Peach";
+	songTitle3 = "Tasteless Banana";
+	songTitle4 = "Kiwi";
+
+	song2[0] = song2[0]->MakeSong(songTitle1, 185, Rap);
+	song2[1] = song2[1]->MakeSong(songTitle2, 193, Chanson);
+	song2[2] = song2[2]->MakeSong(songTitle3, 167, Blues);
+	song2[3] = song2[3]->MakeSong(songTitle4, 212, Rock);
 
 	Song** song3 = new Song * [songsCount];
-	song3[0] = song3[0]->MakeSong("Dewlap", 197, Rap);
-	song3[1] = song3[1]->MakeSong("Heart", 216, Rock);
-	song3[2] = song3[2]->MakeSong("Little Heart", 200, Blues);
-	song3[3] = song3[3]->MakeSong("Jowls", 230, Rock);
+
+	songTitle1 = "Dewlap";
+	songTitle2 = "Heart";
+	songTitle3 = "Little Heart";
+	songTitle4 = "Jowls";
+
+	song3[0] = song3[0]->MakeSong(songTitle1, 197, Rap);
+	song3[1] = song3[1]->MakeSong(songTitle2, 216, Rock);
+	song3[2] = song3[2]->MakeSong(songTitle3, 200, Blues);
+	song3[3] = song3[3]->MakeSong(songTitle4, 230, Rock);
 
 	const int albumsCount = 3;
 	Album** album = new Album * [albumsCount];
-	album[0] = album[0]->MakeAlbum("Clowns", 2020, songsCount, song1);
-	album[1] = album[1]->MakeAlbum("Funny fruits", 2012, songsCount, song2);
-	album[2] = album[2]->MakeAlbum("Cakes", 1998, songsCount, song3);
 
-	Band* band = MakeBand("Peaches", "Ben, Rosie, Lily", albumsCount, album);
+	string albumTitle = "Clown";
+	album[0] = album[0]->MakeAlbum(albumTitle, 2020, songsCount, song1);
+	albumTitle = "Funny fruits";
+	album[1] = album[1]->MakeAlbum(albumTitle, 2012, songsCount, song2);
+	albumTitle = "Cakes";
+	album[2] = album[2]->MakeAlbum(albumTitle, 1998, songsCount, song3);
 
-	Song* foundSong = band->FindSong("Heart");
+	string bandName = "Peaches";
+	string description = "Ben, Rosie, Lily";
+	Band* band = MakeBand(bandName, description, albumsCount, album);
+
+	Song* foundSong = band->FindSong(songTitle2);
 	cout << "Title: " << foundSong->GetTitle() << "\t"
 		<< "Duration: " << foundSong->GetDuration() << "\t"
 		<< "Genre: " << foundSong->GetGenre() << "\n" << endl;
@@ -153,25 +179,21 @@ void Band::DemoBand()
 
 	int allSongsCount = 0;
 	Song** allFoundSongs = band->GetAllSongs(allSongsCount);
-	//TODO: Дубль
+	//TODO: Дубль (+)
 	cout << "Number of songs ->\t" << allSongsCount << "\n" << endl;
 	for (int i = 0; i < allSongsCount; i++)
 	{
-		cout << "Title: " << allFoundSongs[i]->GetTitle() << "\t"
-			<< "Duration: " << allFoundSongs[i]->GetDuration() << "\t"
-			<< "Genre: " << allFoundSongs[i]->GetGenre() << endl;
+		WriteSongs(allFoundSongs[i]);
 	}
 
 	int allSongsCountInGenre = 0;
 	Song** allGenreSongs = band->GetAllGenreSongs(Blues, allSongsCountInGenre);
 	cout << "\nNumber of songs in genre ->\t" 
 		<< allSongsCountInGenre << "\n" << endl;
-	//TODO: Дубль
+	//TODO: Дубль (+)
 	for (int i = 0; i < allSongsCountInGenre; i++)
 	{
-		cout << "Title: " << allGenreSongs[i]->GetTitle() << "\t"
-			<< "Duration: " << allGenreSongs[i]->GetDuration() << "\t"
-			<< "Genre: " << allGenreSongs[i]->GetGenre() << endl;
+		WriteSongs(allGenreSongs[i]);
 	}
 	for (int i = 0; i < songsCount; i++)
 	{

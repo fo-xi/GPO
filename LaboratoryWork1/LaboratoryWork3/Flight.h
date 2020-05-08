@@ -11,11 +11,11 @@ struct Flight
 	Time* DepartureTime;
 	Time* ArrivalTime;
 };
-//TODO: Строку по ссылке?
-Flight* MakeFlight(string, string, string, Time*, Time*);
-void SetFlightNumber(Flight*, string);
-void SetPointDeparture(Flight*, string);
-void SetDestination(Flight*, string);
+//TODO: Строку по ссылке? (+)
+Flight* MakeFlight(string&, string&, string&, Time*, Time*);
+void SetFlightNumber(Flight*, string&);
+void SetPointDeparture(Flight*, string&);
+void SetDestination(Flight*, string&);
 void SetDepartureTime(Flight*, Time*);
 void SetArrivalTime(Flight*, Time*);
 int GetFlightTimeMinutes(Flight&);

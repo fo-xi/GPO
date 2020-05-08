@@ -1,5 +1,6 @@
 #include <exception>
 #include "Time.h"
+#include "ReadValue.h"
 
 Time* MakeTime(int year, int month, int day, int hour, int minute)
 {
@@ -14,10 +15,10 @@ Time* MakeTime(int year, int month, int day, int hour, int minute)
 
 void SetYear(Time* time, int year)
 {
-	//TODO: Дублируется между cpp файлами
-	if (year < 0)
+	//TODO: Дублируется между cpp файлами (+)
+	if ((year < 0) || (year > 2020))
 	{
-		throw exception("The year can't be negative");
+		throw exception("Year should be positive and not more than this year");
 	}
 	time->Year = year;
 }
