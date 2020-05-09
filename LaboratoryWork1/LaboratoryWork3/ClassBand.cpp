@@ -107,11 +107,52 @@ Song** Band::GetAllGenreSongs(Genre findingGenre, int& allSongsCountInGenre)
 	return allSongs;
 }
 
-void WriteSongs(Song* song)
+void Band::WriteGenre(Genre genre)
+{
+	switch (genre)
+	{
+		case 0:
+		{
+			cout << "Blues";
+			break;
+		}
+		case 1:
+		{
+			cout << "Jazz";
+			break;
+		}
+		case 2:
+		{
+			cout << "Pop";
+			break;
+		}
+		case 3:
+		{
+			cout << "Rock";
+			break;
+		}
+		case 4:
+		{
+			cout << "Rap";
+			break;
+		}
+		case 5:
+		{
+			cout << "Chanson";
+			break;
+		}
+	default:
+		break;
+	}
+}
+
+void Band::WriteSongs(Song* song)
 {
 	cout << "Title: " << song->GetTitle() << "\t"
 		<< "Duration: " << song->GetDuration() << "\t"
-		<< "Genre: " << song->GetGenre() << endl;
+		<< "Genre: ";
+	WriteGenre(song->GetGenre());
+	cout << endl;
 }
 
 void Band::DemoBand()
@@ -131,9 +172,9 @@ void Band::DemoBand()
 
 	Song** song2 = new Song * [songsCount];
 
-	songTitle1 = "Watermelon";
+	songTitle1 = "Melon";
 	songTitle2 = "Peach";
-	songTitle3 = "Tasteless Banana";
+	songTitle3 = "Banana";
 	songTitle4 = "Kiwi";
 
 	song2[0] = new Song(songTitle1, 185, Rap);
@@ -145,7 +186,7 @@ void Band::DemoBand()
 
 	songTitle1 = "Dewlap";
 	songTitle2 = "Heart";
-	songTitle3 = "Little Heart";
+	songTitle3 = "Ear";
 	songTitle4 = "Jowls";
 
 	song3[0] = new Song(songTitle1, 197, Rap);
@@ -170,7 +211,9 @@ void Band::DemoBand()
 	Song* foundSong = band->FindSong(songTitle2);
 	cout << "Title: " << foundSong->GetTitle() << "\t"
 		<< "Duration: " << foundSong->GetDuration() << "\t"
-		<< "Genre: " << foundSong->GetGenre() << "\n" << endl;
+		<< "Genre: ";
+	WriteGenre(foundSong->GetGenre());
+	cout << endl;
 
 	Album* foundAlbum = band->FindAlbum(song2[2]);
 	cout << "Album title: " << foundAlbum->GetAlbumTitle() << "\t"
@@ -188,8 +231,9 @@ void Band::DemoBand()
 
 	int allSongsCountInGenre = 0;
 	Song** allGenreSongs = band->GetAllGenreSongs(Blues, allSongsCountInGenre);
-	cout << "\nNumber of songs in genre ->\t" 
-		<< allSongsCountInGenre << "\n" << endl;
+	cout << "\nNumber of songs in genre ->\t";
+	WriteGenre(Blues);
+	cout << "\n" << endl;
 	//TODO: Дубль (+)
 	for (int i = 0; i < allSongsCountInGenre; i++)
 	{

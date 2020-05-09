@@ -19,5 +19,6 @@ Song* FindSong(Band*, string&);
 Album* FindAlbum(Band*, Song*);
 Song** GetAllSongs(Band*, int&);
 Song** GetAllGenreSongs(Band*, Genre, int&);
+void WriteGenre(Genre);
 void WriteSongs(Song*);
 void DemoBand();

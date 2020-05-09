@@ -110,11 +110,52 @@ Song** GetAllGenreSongs(Band* band, Genre findingGenre, int& allSongsCountInGenr
 	return allSongs;
 }
 
+void WriteGenre(Genre genre)
+{
+	switch (genre)
+	{
+		case 0:
+		{
+			cout << "Blues";
+			break;
+		}
+		case 1:
+		{
+			cout << "Jazz";
+			break;
+		}
+		case 2:
+		{
+			cout << "Pop";
+			break;
+		}
+		case 3:
+		{
+			cout << "Rock";
+			break;
+		}
+		case 4:
+		{
+			cout << "Rap";
+			break;
+		}
+		case 5:
+		{
+			cout << "Chanson";
+			break;
+		}
+		default:
+			break;
+	}
+}
+
 void WriteSongs(Song* song)
 {
 	cout << "Title: " << song->SongTitle << "\t"
 		<< "Duration: " << song->Duration << "\t"
-		<< "Genre: " << song->Genre << endl;
+		<< "Genre: ";
+	WriteGenre(song->Genre);
+	cout << endl;
 }
 
 void DemoBand()
@@ -134,9 +175,9 @@ void DemoBand()
 
 	Song** song2 = new Song * [songsCount];
 
-	songTitle1 = "Watermelon";
+	songTitle1 = "Melon";
 	songTitle2 = "Peach";
-	songTitle3 = "Tasteless Banana";
+	songTitle3 = "Banana";
 	songTitle4 = "Kiwi";
 
 	song2[0] = MakeSong(songTitle1, 185, Rap);
@@ -148,7 +189,7 @@ void DemoBand()
 
 	songTitle1 = "Dewlap";
 	songTitle2 = "Heart";
-	songTitle3 = "Little Heart";
+	songTitle3 = "Ear";
 	songTitle4 = "Jowls";
 
 	song3[0] = MakeSong(songTitle1, 197, Rap);
@@ -173,7 +214,9 @@ void DemoBand()
 	Song* foundSong = FindSong(band, songTitle2);
 	cout << "Title: " << foundSong->SongTitle << "\t"
 		<< "Duration: " << foundSong->Duration << "\t"
-		<< "Genre: " << foundSong->Genre << "\n" << endl;
+		<< "Genre: ";
+	WriteGenre(foundSong->Genre);
+	cout << endl;
 
 	Album* foundAlbum = FindAlbum(band, song2[2]);
 	cout << "Album title: " << foundAlbum->AlbumTitle << "\t"
@@ -191,8 +234,9 @@ void DemoBand()
 
 	int allSongsCountInGenre = 0;
 	Song** allGenreSongs = GetAllGenreSongs(band, Blues, allSongsCountInGenre);
-	cout << "\nNumber of songs in genre ->\t" 
-		<< allSongsCountInGenre << "\n" << endl;
+	cout << "\nNumber of songs in genre ->\t";
+	WriteGenre(Blues);
+	cout << "\n" << endl;
 	//TODO: Дубль (+)
 	for (int i = 0; i < allSongsCountInGenre; i++)
 	{

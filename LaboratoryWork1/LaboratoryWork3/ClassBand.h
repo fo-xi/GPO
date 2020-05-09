@@ -21,6 +21,8 @@ class Band
 		Album* FindAlbum(Song*);
 		Song** GetAllSongs(int&);
 		Song** GetAllGenreSongs(Genre, int&);
+		void WriteGenre(Genre);
+		void WriteSongs(Song*);
 		void DemoBand();
 
 		string GetBandName();
