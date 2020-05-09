@@ -5,14 +5,15 @@
 #include "Rectangle.h"
 #include "Flight.h"
 #include "Band.h"
+#include <Windows.h>
 
 using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "Rus");
-
-	while (true)
+	//setlocale(LC_ALL, "Rus");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	{
 		system("cls");
 		cout << endl;
