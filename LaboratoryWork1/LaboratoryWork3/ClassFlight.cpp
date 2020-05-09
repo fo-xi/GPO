@@ -65,49 +65,49 @@ void Flight::DemoFlightWithTime()
 {
 	const int count = 5;
 	Time* departures[count];
-	departures[0] = departures[0]->MakeTime(2019, 1, 23, 14, 21);
-	departures[1] = departures[1]->MakeTime(2018, 2, 12, 15, 30);
-	departures[2] = departures[2]->MakeTime(2017, 3, 11, 21, 59);
-	departures[3] = departures[3]->MakeTime(2016, 4, 5, 16, 48);
-	departures[4] = departures[4]->MakeTime(2015, 5, 17, 4, 31);
+	departures[0] = new Time(2019, 1, 23, 14, 21);
+	departures[1] = new Time(2018, 2, 12, 15, 30);
+	departures[2] = new Time(2017, 3, 11, 21, 59);
+	departures[3] = new Time(2016, 4, 5, 16, 48);
+	departures[4] = new Time(2015, 5, 17, 4, 31);
 
 	Time* arrivals[count];
-	arrivals[0] = arrivals[0]->MakeTime(2019, 1, 23, 17, 44);
-	arrivals[1] = arrivals[1]->MakeTime(2018, 2, 13, 17, 56);
-	arrivals[2] = arrivals[2]->MakeTime(2017, 3, 11, 23, 59);
-	arrivals[3] = arrivals[3]->MakeTime(2016, 4, 5, 20, 57);
-	arrivals[4] = arrivals[4]->MakeTime(2015, 5, 18, 12, 44);
+	arrivals[0] = new Time(2019, 1, 23, 17, 44);
+	arrivals[1] = new Time(2018, 2, 13, 17, 56);
+	arrivals[2] = new Time(2017, 3, 11, 23, 59);
+	arrivals[3] = new Time(2016, 4, 5, 20, 57);
+	arrivals[4] = new Time(2015, 5, 18, 12, 44);
 
 	Flight* flights[count];
 
 	string flightNumber = "S578D";
 	string pointDeparture = "Chelyabinsk";
 	string destination = "Yekaterinburg";
-	flights[0] = MakeFlight(flightNumber, pointDeparture,
+	flights[0] = new Flight(flightNumber, pointDeparture,
 		destination, departures[0], arrivals[0]);
 
 	flightNumber = "MRM43";
 	pointDeparture = "Samara";
 	destination = "Kazan";
-	flights[1] = MakeFlight(flightNumber, pointDeparture,
+	flights[1] = new Flight(flightNumber, pointDeparture,
 		destination, departures[1], arrivals[1]);
 
 	flightNumber = "LF543";
 	pointDeparture = "Omsk";
 	destination = "Perm";
-	flights[2] = MakeFlight(flightNumber, pointDeparture,
+	flights[2] = new Flight(flightNumber, pointDeparture,
 		destination, departures[2], arrivals[2]);
 
 	flightNumber = "SLD33";
 	pointDeparture = "Krasnoyarsk";
 	destination = "Saratov";
-	flights[3] = MakeFlight(flightNumber, pointDeparture,
+	flights[3] = new Flight(flightNumber, pointDeparture,
 		destination, departures[3], arrivals[3]);
 
 	flightNumber = "R34R2";
 	pointDeparture = "Novosibirsk";
 	destination = "Izhevsk";
-	flights[4] = MakeFlight(flightNumber, pointDeparture,
+	flights[4] = new Flight(flightNumber, pointDeparture,
 		destination, departures[4], arrivals[4]);
 
 	for (int i = 0; i < count; i++)

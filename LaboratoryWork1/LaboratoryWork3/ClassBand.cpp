@@ -124,10 +124,10 @@ void Band::DemoBand()
 	string songTitle3 = "Beautiful Clown";
 	string songTitle4 = "Scary Clown";
 
-	song1[0] = song1[0]->MakeSong(songTitle1, 200, Blues);
-	song1[1] = song1[1]->MakeSong(songTitle2, 210, Jazz);
-	song1[2] = song1[2]->MakeSong(songTitle3, 203, Rap);
-	song1[3] = song1[3]->MakeSong(songTitle4, 179, Rap);
+	song1[0] = new Song(songTitle1, 200, Blues);
+	song1[1] = new Song(songTitle2, 210, Jazz);
+	song1[2] = new Song(songTitle3, 203, Rap);
+	song1[3] = new Song(songTitle4, 179, Rap);
 
 	Song** song2 = new Song * [songsCount];
 
@@ -136,10 +136,10 @@ void Band::DemoBand()
 	songTitle3 = "Tasteless Banana";
 	songTitle4 = "Kiwi";
 
-	song2[0] = song2[0]->MakeSong(songTitle1, 185, Rap);
-	song2[1] = song2[1]->MakeSong(songTitle2, 193, Chanson);
-	song2[2] = song2[2]->MakeSong(songTitle3, 167, Blues);
-	song2[3] = song2[3]->MakeSong(songTitle4, 212, Rock);
+	song2[0] = new Song(songTitle1, 185, Rap);
+	song2[1] = new Song(songTitle2, 193, Chanson);
+	song2[2] = new Song(songTitle3, 167, Blues);
+	song2[3] = new Song(songTitle4, 212, Rock);
 
 	Song** song3 = new Song * [songsCount];
 
@@ -148,24 +148,24 @@ void Band::DemoBand()
 	songTitle3 = "Little Heart";
 	songTitle4 = "Jowls";
 
-	song3[0] = song3[0]->MakeSong(songTitle1, 197, Rap);
-	song3[1] = song3[1]->MakeSong(songTitle2, 216, Rock);
-	song3[2] = song3[2]->MakeSong(songTitle3, 200, Blues);
-	song3[3] = song3[3]->MakeSong(songTitle4, 230, Rock);
+	song3[0] = new Song(songTitle1, 197, Rap);
+	song3[1] = new Song(songTitle2, 216, Rock);
+	song3[2] = new Song(songTitle3, 200, Blues);
+	song3[3] = new Song(songTitle4, 230, Rock);
 
 	const int albumsCount = 3;
 	Album** album = new Album * [albumsCount];
 
 	string albumTitle = "Clown";
-	album[0] = album[0]->MakeAlbum(albumTitle, 2020, songsCount, song1);
+	album[0] = new Album(albumTitle, 2020, songsCount, song1);
 	albumTitle = "Funny fruits";
-	album[1] = album[1]->MakeAlbum(albumTitle, 2012, songsCount, song2);
+	album[1] = new Album(albumTitle, 2012, songsCount, song2);
 	albumTitle = "Cakes";
-	album[2] = album[2]->MakeAlbum(albumTitle, 1998, songsCount, song3);
+	album[2] = new Album(albumTitle, 1998, songsCount, song3);
 
 	string bandName = "Peaches";
 	string description = "Ben, Rosie, Lily";
-	Band* band = MakeBand(bandName, description, albumsCount, album);
+	Band* band = new Band(bandName, description, albumsCount, album);
 
 	Song* foundSong = band->FindSong(songTitle2);
 	cout << "Title: " << foundSong->GetTitle() << "\t"

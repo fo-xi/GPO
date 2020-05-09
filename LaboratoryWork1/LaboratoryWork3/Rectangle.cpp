@@ -59,18 +59,18 @@ void DemoRectangleWithPoint()
 			<< "Width = " << rectangles[i]->Width << ";\t" << endl;
 	}
 
-	double Xcenter = 0.0;
-	double Ycenter = 0.0;
+	double xCenter = 0.0;
+	double yCenter = 0.0;
 	for (int i = 0; i < countRectangles; i++)
 	{
-		Xcenter += rectangles[i]->Center->X;
-		Ycenter += rectangles[i]->Center->Y;
+		xCenter += rectangles[i]->Center->X;
+		yCenter += rectangles[i]->Center->Y;
 	}
 
-	Xcenter /= countRectangles;
-	Ycenter /= countRectangles;
-	cout << "\nXcenter = " << Xcenter
-		<< ";\t" << "Ycenter = " << Ycenter << "\n" << endl;
+	xCenter /= countRectangles;
+	yCenter /= countRectangles;
+	cout << "\nXcenter = " << xCenter
+		<< ";\t" << "Ycenter = " << yCenter << "\n" << endl;
 	for (int i = 0; i < countCenters; i++)
 	{
 		delete centers[i];

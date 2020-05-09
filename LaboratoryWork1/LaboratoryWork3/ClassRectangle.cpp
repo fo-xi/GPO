@@ -30,19 +30,19 @@ void Rectangle::DemoRectangleWithPoint()
 {
 	const int countCenters = 5;
 	Point* centers[countCenters];
-	centers[0] = centers[0]->MakePoint(2.5, 0.45);
-	centers[1] = centers[1]->MakePoint(43.56, 77.43);
-	centers[2] = centers[2]->MakePoint(11.11, 22.71);
-	centers[3] = centers[3]->MakePoint(90.09, 47.56);
-	centers[4] = centers[4]->MakePoint(1.98, 59.17);
+	centers[0] = new Point(2.5, 0.45);
+	centers[1] = new Point(43.56, 77.43);
+	centers[2] = new Point(11.11, 22.71);
+	centers[3] = new Point(90.09, 47.56);
+	centers[4] = new Point(1.98, 59.17);
 
 	const int countRectangles = 5;
 	Rectangle* rectangles[countRectangles];
-	rectangles[0] = MakeRectangle(45.47, 7.45, centers[0]);
-	rectangles[1] = MakeRectangle(17.69, 33.56, centers[1]);
-	rectangles[2] = MakeRectangle(90.65, 21.89, centers[2]);
-	rectangles[3] = MakeRectangle(27.12, 3.21, centers[3]);
-	rectangles[4] = MakeRectangle(15.12, 3.76, centers[4]);
+	rectangles[0] = new Rectangle(45.47, 7.45, centers[0]);
+	rectangles[1] = new Rectangle(17.69, 33.56, centers[1]);
+	rectangles[2] = new Rectangle(90.65, 21.89, centers[2]);
+	rectangles[3] = new Rectangle(27.12, 3.21, centers[3]);
+	rectangles[4] = new Rectangle(15.12, 3.76, centers[4]);
 
 	for (int i = 0; i < countRectangles; i++)
 	{
