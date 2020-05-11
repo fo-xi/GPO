@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-
+//TODO: Очень негибко получилось... Гибче бы было передавать границы в качестве входных параметров. Поэтому и дублируется с 0-60
 template <typename T>
 T ReadValuesRangeFrom0to10()
 {
