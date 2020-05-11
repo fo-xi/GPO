@@ -15,7 +15,6 @@ void Song::SetTitle(string& songTitle)
 
 void Song::SetDuration(int duration)
 {
-	//TODO: Дублируется между cpp файлами (+)
 	this->_duration = ReadValue(duration);
 }
 

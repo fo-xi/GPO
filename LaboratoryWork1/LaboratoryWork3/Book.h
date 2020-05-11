@@ -15,6 +15,5 @@ struct Book
 
 void ReadBookFromConsole(Book&);
 void WriteBookToConsole(Book&);
-//TODO: Строку по ссылке? (+)
 int FindBookByAuthor(Book*, int, string&);
 void DemoBook();

@@ -43,7 +43,6 @@ void ReadBookFromConsole(Book& book)
 	{
 		cout << "Enter the year of publication ->\t";
 		book.YearPublishing = ReadNumber<int>();
-		//TODO: А в других классах разрешается до 2020... (+)
 		if ((book.YearPublishing > 0) && (book.YearPublishing < 2020))
 		{
 			break;

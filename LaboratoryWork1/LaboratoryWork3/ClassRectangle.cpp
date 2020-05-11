@@ -11,13 +11,11 @@ Rectangle::Rectangle(double length, double width, Point* center)
 
 void Rectangle::SetLength(double length)
 {
-	//TODO: Дубль (+)
 	this->_length = ReadValue(length);
 }
 
 void Rectangle::SetWidth(double width)
 {
-	//TODO: Дубль (+)
 	this->_width = ReadValue(width);
 }
 
@@ -51,7 +49,7 @@ void Rectangle::DemoRectangleWithPoint()
 			<< "Length = " << rectangles[i]->GetLength() << ";\t"
 			<< "Width = " << rectangles[i]->GetWidth() << ";\t" << endl;
 	}
-	//TODO: RSDN (+)
+
 	double xCenter = 0.0;
 	double yCenter = 0.0;
 	for (int i = 0; i < countRectangles; i++)

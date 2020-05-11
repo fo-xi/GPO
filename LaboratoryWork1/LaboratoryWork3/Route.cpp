@@ -38,13 +38,10 @@ void ReadRouteFromConsole(Route& route)
 {
 	cout << "Enter the route number ->\t";
 	route.RouteNumber = ReadNumber<int>();
-	//TODO: Дубль (+)
 	cout << "Enter the average of the route ->\t";
 	route.AverageRoute = ReadValuesRangeFrom0to60<int>();
-	//TODO: Дубль (+)
 	cout << "Enter the frequency of the route ->\t";
 	route.FrequencyRoute = ReadValuesRangeFrom0to60<int>();
-	//TODO: Дубль (+)
 	cout << "Enter the number of stops ->\t";
 	route.NumberStops = ReadValuesRangeFrom0to10<int>();
 

@@ -12,7 +12,6 @@ class Song
 		int _duration;
 		Genre _genre;
 	public:
-	//TODO: Строку по ссылке? (+)
 		Song(string&, int, Genre);
 		void SetTitle(string&);
 		void SetDuration(int);

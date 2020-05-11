@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//TODO: Очень негибко получилось... Гибче бы было передавать границы в качестве входных параметров.
 template <typename T>
 T ReadValuesRangeFrom0to60()
 {

@@ -15,9 +15,9 @@ Time* MakeTime(int year, int month, int day, int hour, int minute)
 
 void SetYear(Time* time, int year)
 {
-	//TODO: Дублируется между cpp файлами (+)
 	if ((year < 0) || (year > 2020))
 	{
+		//TODO: В следующем году программа будет работать не верно, лучше указать конкретный год. Код дублируется между файлами...
 		throw exception("Year should be positive and not more than this year");
 	}
 	time->Year = year;

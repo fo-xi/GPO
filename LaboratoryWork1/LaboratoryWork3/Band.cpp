@@ -23,7 +23,6 @@ void SetDescription(Band* band, string& description)
 
 void SetAlbums(Band* band, int albumsCount, Album** albums)
 {
-	//TODO: Дублируется между cpp файлами (+)
 	band->AlbumsCount = ReadValue(albumsCount);
 	band->Albums = albums;
 }
@@ -226,7 +225,6 @@ void DemoBand()
 	int allSongsCount = 0;
 	Song** allFoundSongs = GetAllSongs(band, allSongsCount);
 	cout << "Number of songs ->\t" << allSongsCount << "\n" << endl;
-	//TODO: Дубль (+)
 	for (int i = 0; i < allSongsCount; i++)
 	{
 		WriteSongs(allFoundSongs[i]);
@@ -237,7 +235,6 @@ void DemoBand()
 	cout << "\nNumber of songs in genre ->\t";
 	WriteGenre(Blues);
 	cout << "\n" << endl;
-	//TODO: Дубль (+)
 	for (int i = 0; i < allSongsCountInGenre; i++)
 	{
 		WriteSongs(allGenreSongs[i]);
