@@ -18,8 +18,8 @@ void Album::SetAlbumTitle(string& albumTitle)
 void Album::SetYearManufacture(int yearManufacture)
 {
 	if ((yearManufacture < 0) || (yearManufacture > 2020))
-	{//TODO: В следующем году программа будет работать не верно, лучше указать конкретный год. Код дублируется между файлами...
-		throw exception("Year of manufacture should be positive and not more than this year");
+	{//TODO: В следующем году программа будет работать не верно, лучше указать конкретный год. Код дублируется между файлами... (+)
+		throw exception("The year must be positive in the range from 0 to 2020 inclusive");
 	}
 	this->_yearManufacture = yearManufacture;
 }

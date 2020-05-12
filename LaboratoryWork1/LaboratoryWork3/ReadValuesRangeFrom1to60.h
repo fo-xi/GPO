@@ -2,12 +2,10 @@
 #include <iostream>
 
 using namespace std;
-
-//TODO: Очень негибко получилось... Гибче бы было передавать границы в качестве входных параметров. Поэтому и дублируется с 0-10
+//TODO: Очень негибко получилось... Гибче бы было передавать границы в качестве входных параметров. Поэтому и дублируется с 0-10 (+)
 template <typename T>
-T ReadValuesRangeFrom0to60()
+T ReadValuesRangeFrom1to60(T number)
 {
-	T number;
 	while (true)
 	{
 		number = ReadNumber<int>();
@@ -18,7 +16,7 @@ T ReadValuesRangeFrom0to60()
 		else
 		{
 			cout << "The value must be in the ";
-			cout << "range from 0 to 60. Try again." << endl;
+			cout << "range from 1 to 60. Try again." << endl;
 		}
 	}
 	return number;

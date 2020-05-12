@@ -1,6 +1,6 @@
 #include "Book.h"
 #include "..\Common\ReadNumber.h"
-#include "ReadValuesRangeFrom0to10.h"
+#include "ReadValuesRangeFrom1to10.h"
 
 void DemoBook()
 {
@@ -43,14 +43,14 @@ void ReadBookFromConsole(Book& book)
 	{
 		cout << "Enter the year of publication ->\t";
 		book.YearPublishing = ReadNumber<int>();
-		if ((book.YearPublishing > 0) && (book.YearPublishing < 2020))
+		if ((book.YearPublishing > 0) && (book.YearPublishing <= 2020))
 		{
 			break;
 		}
 		else
 		{
-			cout << "The year of publication must be positive,";
-			cout << "but no more than the current year. Try again." << endl;
+			cout << "The year must be positive in the range ";
+			cout << "from 0 to 2020 inclusive. Try again." << endl;
 		}
 	}
 	while (true)
@@ -68,7 +68,7 @@ void ReadBookFromConsole(Book& book)
 		}
 	}
 	cout << "Enter the number of authors ->\t";
-	book.NumberAuthors = ReadValuesRangeFrom0to10<int>();
+	book.NumberAuthors = ReadValuesRangeFrom1to10(book.NumberAuthors);
 
 	book.Authors = new string[book.NumberAuthors];
 	for (int i = 0; i < book.NumberAuthors; i++)
@@ -80,7 +80,6 @@ void ReadBookFromConsole(Book& book)
 		cout << "Enter the authors ¹" << i + 1 << ": ";
 		getline(cin, book.Authors[i]);
 	}
-
 }
 
 void WriteBookToConsole(Book& book)

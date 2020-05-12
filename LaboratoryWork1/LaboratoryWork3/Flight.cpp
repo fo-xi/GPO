@@ -48,11 +48,11 @@ int GetFlightTimeMinutes(Flight* flight)
 {
 	int minutesInHour = 60;
 	int hoursInDay = 24;
-	int flightTimeHours = flight->ArrivalTime->Hour - 
+	int flightTimeHours = flight->ArrivalTime->Hour -
 		flight->DepartureTime->Hour;
-	int flightTimeMinutes = flight->ArrivalTime->Minute - 
+	int flightTimeMinutes = flight->ArrivalTime->Minute -
 		flight->DepartureTime->Minute;
-	int daysInFlight = (flight->ArrivalTime->Day - 
+	int daysInFlight = (flight->ArrivalTime->Day -
 		flight->DepartureTime->Day) * hoursInDay;
 
 	if (flightTimeMinutes < 0)

@@ -14,8 +14,8 @@ void Time::SetYear(int year)
 {
 	if ((year < 0) || (year > 2020))
 	{
-		//TODO: В следующем году программа будет работать не верно, лучше указать конкретный год. Код дублируется между файлами...
-		throw exception("Year should be positive and not more than this year");
+		//TODO: В следующем году программа будет работать не верно, лучше указать конкретный год. Код дублируется между файлами... (+)
+		throw exception("The year must be positive in the range from 0 to 2020 inclusive");
 	}
 	this->_year = year;
 }
