@@ -9,7 +9,7 @@ T ReadValuesRangeFrom1to10(T number)
 	while (true)
 	{
 		number = ReadNumber<int>();
-		if ((number > 0) && (number <= 10))
+		if ((number > 0) || (number <= 10))
 		{
 			break;
 		}
