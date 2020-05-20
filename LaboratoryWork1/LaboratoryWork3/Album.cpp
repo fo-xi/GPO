@@ -20,7 +20,6 @@ void SetYearManufacture(Album* album, int yearManufacture)
 {
 	if ((yearManufacture < 0) || (yearManufacture > 2020))
 	{
-		//TODO: В следующем году программа будет работать не верно, лучше указать конкретный год. Код дублируется между файлами... (+)
 		throw exception("The year must be positive in the range from 0 to 2020 inclusive");
 	}
 	album->YearManufacture = yearManufacture;
