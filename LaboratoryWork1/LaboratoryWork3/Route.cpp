@@ -1,7 +1,6 @@
 #include "Route.h"
 #include "..\Common\ReadNumber.h"
-#include "ReadValuesRangeFrom1to60.h"
-#include "ReadValuesRangeFrom1to10.h"
+#include "ReadValueRange.h"
 
 void DemoRoute()
 {
@@ -39,11 +38,11 @@ void ReadRouteFromConsole(Route& route)
 	cout << "Enter the route number ->\t";
 	route.RouteNumber = ReadNumber<int>();
 	cout << "Enter the average of the route ->\t";
-	route.AverageRoute = ReadValuesRangeFrom1to60(route.AverageRoute);
+	route.AverageRoute = ReadValueRange(route.AverageRoute, 1, 60);
 	cout << "Enter the frequency of the route ->\t";
-	route.FrequencyRoute = ReadValuesRangeFrom1to60(route.FrequencyRoute);
+	route.FrequencyRoute = ReadValueRange(route.FrequencyRoute, 1, 60);
 	cout << "Enter the number of stops ->\t";
-	route.NumberStops = ReadValuesRangeFrom1to10(route.NumberStops);
+	route.NumberStops = ReadValueRange(route.NumberStops, 1, 10);
 
 	route.NamesStops = new string[route.NumberStops];
 	for (int i = 0; i < route.NumberStops; i++)

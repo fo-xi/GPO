@@ -1,6 +1,6 @@
 #include "Book.h"
 #include "..\Common\ReadNumber.h"
-#include "ReadValuesRangeFrom1to10.h"
+#include "ReadValueRange.h"
 
 void DemoBook()
 {
@@ -68,7 +68,7 @@ void ReadBookFromConsole(Book& book)
 		}
 	}
 	cout << "Enter the number of authors ->\t";
-	book.NumberAuthors = ReadValuesRangeFrom1to10(book.NumberAuthors);
+	book.NumberAuthors = ReadValueRange(book.NumberAuthors, 1, 10);
 
 	book.Authors = new string[book.NumberAuthors];
 	for (int i = 0; i < book.NumberAuthors; i++)

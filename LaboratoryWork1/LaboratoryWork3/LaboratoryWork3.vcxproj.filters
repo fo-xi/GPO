@@ -143,10 +143,7 @@
     <ClInclude Include="ReadValue.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="ReadValuesRangeFrom1to10.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="ReadValuesRangeFrom1to60.h">
+    <ClInclude Include="ReadValueRange.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
