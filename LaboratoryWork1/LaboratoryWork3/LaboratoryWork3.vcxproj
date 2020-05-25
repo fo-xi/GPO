@@ -172,6 +172,7 @@
     <ClInclude Include="ClassRectangle.h" />
     <ClInclude Include="ClassSong.h" />
     <ClInclude Include="ClassTime.h" />
+    <ClInclude Include="Genre.h" />
     <ClInclude Include="ReadValue.h" />
     <ClInclude Include="ReadValueRange.h" />
     <ClInclude Include="Route.h" />

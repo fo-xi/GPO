@@ -95,5 +95,8 @@
     <ClInclude Include="ReadValueRange.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="Genre.h">
+      <Filter>Файлы заголовков\Classes</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
