@@ -24,7 +24,7 @@ void Rectangle::SetCenter(Point* center)
 	this->_center = center;
 }
 
-void Rectangle::DemoRectangleWithPoint()
+void DemoRectangleWithPoint()
 {
 	const int countCenters = 5;
 	Point* centers[countCenters];

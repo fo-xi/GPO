@@ -25,12 +25,6 @@
     <Filter Include="Файлы заголовков\Classes">
       <UniqueIdentifier>{4232a4d3-b53c-468f-b96a-195746acadd1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Aggregation">
-      <UniqueIdentifier>{55838e99-9a40-47ef-8785-73c38c1d5f23}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\Aggregation">
-      <UniqueIdentifier>{66832827-e6da-4c76-8c90-68444b192480}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LaboratoryWork3.cpp">
@@ -41,27 +35,6 @@
     </ClCompile>
     <ClCompile Include="Route.cpp">
       <Filter>Исходные файлы\Structures</Filter>
-    </ClCompile>
-    <ClCompile Include="Point.cpp">
-      <Filter>Исходные файлы\Aggregation</Filter>
-    </ClCompile>
-    <ClCompile Include="Rectangle.cpp">
-      <Filter>Исходные файлы\Aggregation</Filter>
-    </ClCompile>
-    <ClCompile Include="Time.cpp">
-      <Filter>Исходные файлы\Aggregation</Filter>
-    </ClCompile>
-    <ClCompile Include="Flight.cpp">
-      <Filter>Исходные файлы\Aggregation</Filter>
-    </ClCompile>
-    <ClCompile Include="Song.cpp">
-      <Filter>Исходные файлы\Aggregation</Filter>
-    </ClCompile>
-    <ClCompile Include="Album.cpp">
-      <Filter>Исходные файлы\Aggregation</Filter>
-    </ClCompile>
-    <ClCompile Include="Band.cpp">
-      <Filter>Исходные файлы\Aggregation</Filter>
     </ClCompile>
     <ClCompile Include="ClassPoint.cpp">
       <Filter>Исходные файлы\Classes</Filter>
@@ -92,32 +65,8 @@
     <ClInclude Include="Route.h">
       <Filter>Файлы заголовков\Structures</Filter>
     </ClInclude>
-    <ClInclude Include="Point.h">
-      <Filter>Файлы заголовков\Aggregation</Filter>
-    </ClInclude>
-    <ClInclude Include="Rectangle.h">
-      <Filter>Файлы заголовков\Aggregation</Filter>
-    </ClInclude>
-    <ClInclude Include="Time.h">
-      <Filter>Файлы заголовков\Aggregation</Filter>
-    </ClInclude>
-    <ClInclude Include="Flight.h">
-      <Filter>Файлы заголовков\Aggregation</Filter>
-    </ClInclude>
-    <ClInclude Include="Genre.h">
-      <Filter>Файлы заголовков\Aggregation</Filter>
-    </ClInclude>
-    <ClInclude Include="Song.h">
-      <Filter>Файлы заголовков\Aggregation</Filter>
-    </ClInclude>
-    <ClInclude Include="Album.h">
-      <Filter>Файлы заголовков\Aggregation</Filter>
-    </ClInclude>
     <ClInclude Include="ClassSong.h">
       <Filter>Файлы заголовков\Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="Band.h">
-      <Filter>Файлы заголовков\Aggregation</Filter>
     </ClInclude>
     <ClInclude Include="ClassPoint.h">
       <Filter>Файлы заголовков\Classes</Filter>
@@ -144,9 +93,6 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="ReadValueRange.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Check.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

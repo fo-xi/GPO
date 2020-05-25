@@ -106,7 +106,7 @@ Song** Band::GetAllGenreSongs(Genre findingGenre, int& allSongsCountInGenre)
 	return allSongs;
 }
 
-void Band::WriteGenre(Genre genre)
+void WriteGenre(Genre genre)
 {
 	switch (genre)
 	{
@@ -145,7 +145,7 @@ void Band::WriteGenre(Genre genre)
 	}
 }
 
-void Band::WriteSongs(Song* song)
+void WriteSongs(Song* song)
 {
 	cout << "Title: " << song->GetTitle() << "\t"
 		<< "Duration: " << song->GetDuration() << "\t"
@@ -154,7 +154,7 @@ void Band::WriteSongs(Song* song)
 	cout << endl;
 }
 
-void Band::DemoBand()
+void DemoBand()
 {
 	const int songsCount = 4;
 	Song** song1 = new Song * [songsCount];

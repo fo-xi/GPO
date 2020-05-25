@@ -61,7 +61,7 @@ int Flight::GetFlightTimeMinutes()
 	return abs((((daysInFlight + flightTimeHours) * minutesInHour) + flightTimeMinutes));
 }
 
-void Flight::DemoFlightWithTime()
+void DemoFlightWithTime()
 {
 	const int count = 5;
 	Time* departures[count];
