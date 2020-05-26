@@ -7,9 +7,7 @@ using namespace std;
 
 static class CollisionManager
 {
-public:
-	static bool IsCollision(Rectangle*, Rectangle*);
-	static bool IsCollision(Ring*, Ring*);
+	public:
+		static bool IsCollision(Rectangle*, Rectangle*);
+		static bool IsCollision(Ring*, Ring*);
 };
-
-void DemoCollision();

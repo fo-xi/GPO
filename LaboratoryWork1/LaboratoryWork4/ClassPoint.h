@@ -3,15 +3,15 @@
 
 class Point
 {
-private:
-	double _x;
-	double _y;
-public:
-	Point(double, double);
+	private:
+		double _x;
+		double _y;
+	public:
+		Point(double, double);
 
-	void SetX(double);
-	void SetY(double);
+		void SetX(double);
+		void SetY(double);
 
-	double GetX();
-	double GetY();
+		double GetX();
+		double GetY();
 };

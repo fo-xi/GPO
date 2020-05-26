@@ -1,115 +1,17 @@
 #include <exception>
 #include "GeometricProgram.h"
 
-void GeometricProgram::DemoBand()
-{
-	const int songsCount = 4;
-	Song** song1 = new Song * [songsCount];
-
-	string songTitle1 = "Unfunny Clown";
-	string songTitle2 = "Cute Clown";
-	string songTitle3 = "Beautiful Clown";
-	string songTitle4 = "Scary Clown";
-
-	song1[0] = new Song(songTitle1, 200, Blues);
-	song1[1] = new Song(songTitle2, 210, Jazz);
-	song1[2] = new Song(songTitle3, 203, Rap);
-	song1[3] = new Song(songTitle4, 179, Rap);
-
-	Song** song2 = new Song * [songsCount];
-
-	songTitle1 = "Melon";
-	songTitle2 = "Peach";
-	songTitle3 = "Banana";
-	songTitle4 = "Kiwi";
-
-	song2[0] = new Song(songTitle1, 185, Rap);
-	song2[1] = new Song(songTitle2, 193, Chanson);
-	song2[2] = new Song(songTitle3, 167, Blues);
-	song2[3] = new Song(songTitle4, 212, Rock);
-
-	Song** song3 = new Song * [songsCount];
-
-	songTitle1 = "Dewlap";
-	songTitle2 = "Heart";
-	songTitle3 = "Ear";
-	songTitle4 = "Jowls";
-
-	song3[0] = new Song(songTitle1, 197, Rap);
-	song3[1] = new Song(songTitle2, 216, Rock);
-	song3[2] = new Song(songTitle3, 200, Blues);
-	song3[3] = new Song(songTitle4, 230, Rock);
-
-	const int albumsCount = 3;
-	Album** album = new Album * [albumsCount];
-
-	string albumTitle = "Clown";
-	album[0] = new Album(albumTitle, 2020, songsCount, song1);
-	albumTitle = "Funny fruits";
-	album[1] = new Album(albumTitle, 2012, songsCount, song2);
-	albumTitle = "Cakes";
-	album[2] = new Album(albumTitle, 1998, songsCount, song3);
-
-	string bandName = "Peaches";
-	string description = "Ben, Rosie, Lily";
-	Band* band = new Band(bandName, description, albumsCount, album);
-
-	Song* foundSong = band->FindSong(songTitle2);
-	cout << "Title: " << foundSong->GetTitle() << "\t"
-		<< "Duration: " << foundSong->GetDuration() << "\t"
-		<< "Genre: ";
-	WriteGenre(foundSong->GetGenre());
-	cout << endl;
-
-	Album* foundAlbum = band->FindAlbum(song2[2]);
-	cout << "Album title: " << foundAlbum->GetAlbumTitle() << "\t"
-		<< "Year manufacture: " << foundAlbum->GetYearManufacture()
-		<< "\n" << endl;
-
-	int allSongsCount = 0;
-	Song** allFoundSongs = band->GetAllSongs(allSongsCount);
-	cout << "Number of songs ->\t" << allSongsCount << "\n" << endl;
-	for (int i = 0; i < allSongsCount; i++)
-	{
-		WriteSongs(allFoundSongs[i]);
-	}
-
-	int allSongsCountInGenre = 0;
-	Song** allGenreSongs = band->GetAllGenreSongs(Blues, allSongsCountInGenre);
-	cout << "\nNumber of songs in genre ->\t";
-	WriteGenre(Blues);
-	cout << "\n" << endl;
-	for (int i = 0; i < allSongsCountInGenre; i++)
-	{
-		WriteSongs(allGenreSongs[i]);
-	}
-	for (int i = 0; i < songsCount; i++)
-	{
-		delete song1[i];
-		delete song2[i];
-		delete song3[i];
-	}
-	delete[] song1;
-	delete[] song2;
-	delete[] song3;
-	for (int i = 0; i < albumsCount; i++)
-	{
-		delete album[i];
-	}
-	delete[] album;
-	delete band;
-	delete[] allFoundSongs;
-	delete[] allGenreSongs;
-}
-
 void GeometricProgram::DemoRing()
 {
 	Ring* ring1 = new Ring(4.47, 1.45, new Point(2.5, 0.45));
 	cout << "Количество колец" << ": " << Ring::GetAllRingsCount();
+	cout << endl;
 	Ring* ring2 = new Ring(3.69, 0.56, new Point(7.56, 2.43));
 	cout << "Количество колец" << ": " << Ring::GetAllRingsCount();
+	cout << endl;
 	Ring* ring3 = new Ring(7.65, 6.89, new Point(8.11, 17.71));
 	cout << "Количество колец" << ": " << Ring::GetAllRingsCount();
+	cout << endl;
 
 	cout << "Area of the first ring" << " = " << ring1->GetArea() << endl;
 	cout << "Area of the second ring" << " = " << ring2->GetArea() << endl;

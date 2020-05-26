@@ -111,36 +111,36 @@ void WriteGenre(Genre genre)
 {
 	switch (genre)
 	{
-	case 0:
-	{
-		cout << "Blues";
-		break;
-	}
-	case 1:
-	{
-		cout << "Jazz";
-		break;
-	}
-	case 2:
-	{
-		cout << "Pop";
-		break;
-	}
-	case 3:
-	{
-		cout << "Rock";
-		break;
-	}
-	case 4:
-	{
-		cout << "Rap";
-		break;
-	}
-	case 5:
-	{
-		cout << "Chanson";
-		break;
-	}
+		case 0:
+		{
+			cout << "Blues";
+			break;
+		}
+		case 1:
+		{
+			cout << "Jazz";
+			break;
+		}
+		case 2:
+		{
+			cout << "Pop";
+			break;
+		}
+		case 3:
+		{
+			cout << "Rock";
+			break;
+		}
+		case 4:
+		{
+			cout << "Rap";
+			break;
+		}
+		case 5:
+		{
+			cout << "Chanson";
+			break;
+		}
 	default:
 		break;
 	}

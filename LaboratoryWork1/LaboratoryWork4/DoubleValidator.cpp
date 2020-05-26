@@ -1,6 +1,7 @@
 #include <exception>
 #include "DoubleValidator.h"
 
+
 bool DoubleValidator::IsValuePositive(double value)
 {
 	if (value < 0)
@@ -21,7 +22,7 @@ bool DoubleValidator::IsValueInRange(double value, double min, double max)
 
 void DoubleValidator::AssertPositiveValue(double value)
 {
-	if ((!IsValuePositive(value)))
+	if (!IsValuePositive(value))
 	{
 		throw exception("The value cannot be negative!");
 	}
@@ -29,7 +30,7 @@ void DoubleValidator::AssertPositiveValue(double value)
 
 void DoubleValidator::AssertValueInRange(double value, double min, double max)
 {
-	if (!(IsValueInRange(value, min, max)))
+	if (!IsValueInRange(value, min, max))
 	{
 		throw exception("The value does not fall within the acceptable range!");
 	}
