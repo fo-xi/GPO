@@ -22,6 +22,7 @@ void Rectangle::SetWidth(double width)
 
 void Rectangle::SetCenter(Point* center)
 {
+	//TODO: Может быть утечка памяти, т.к. через конструктор создал точку, а тут просто переопределил, а память не освободил
 	this->_center = center;
 }
 
