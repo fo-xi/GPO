@@ -18,7 +18,7 @@ class Ring
 
 	public:
 		void SetRadiuses(double, double);
-		void SetCenter(Point*);
+		void SetCenter(double, double);
 
 		double GetOuterRadius();
 		double GetInnerRadius();
@@ -29,6 +29,6 @@ class Ring
 		static int GrowAllRingsCount();
 		static int DecreaseAllRingsCount();
 
-		Ring(double, double, Point*);
+		Ring(double, double, double, double);
 		~Ring();
 };

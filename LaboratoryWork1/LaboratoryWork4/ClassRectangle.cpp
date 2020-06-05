@@ -1,11 +1,11 @@
 #include <exception>
 #include "ClassRectangle.h"
 
-Rectangle::Rectangle(double length, double width, Point* center)
+Rectangle::Rectangle(double length, double width, double x, double y)
 {
 	this->SetLength(length);
 	this->SetWidth(width);
-	this->SetCenter(center);
+	this->SetCenter(x, y);
 }
 
 void Rectangle::SetLength(double length)
@@ -20,10 +20,10 @@ void Rectangle::SetWidth(double width)
 	this->_width = width;
 }
 
-void Rectangle::SetCenter(Point* center)
+void Rectangle::SetCenter(double x, double y)
 {
-	//TODO: Может быть утечка памяти, т.к. через конструктор создал точку, а тут просто переопределил, а память не освободил
-	this->_center = center;
+	//TODO: Может быть утечка памяти, т.к. через конструктор создал точку, а тут просто переопределил, а память не освободил (+)
+	this->_center = new Point(x, y);
 }
 
 double Rectangle::GetLength()
@@ -39,4 +39,9 @@ double Rectangle::GetWidth()
 Point* Rectangle::GetCenter()
 {
 	return this->_center;
+}
+
+Rectangle::~Rectangle()
+{
+	delete this->_center;
 }

@@ -6,8 +6,9 @@
 
 using namespace std;
 
-//TODO: ѕочему не сделать статической?
-class GeometricProgram
+//TODO: ѕочему не сделать статической? (+)
+//¬ задании было сказано создать сервисный не статический класс
+static class GeometricProgram
 {
 	public:
 		void DemoRing();

@@ -8,6 +8,6 @@ using namespace std;
 static class CollisionManager
 {
 	public:
-		static bool IsCollision(Rectangle*, Rectangle*);
-		static bool IsCollision(Ring*, Ring*);
+		static bool IsCollision(Rectangle&, Rectangle&);
+		static bool IsCollision(Ring&, Ring&);
 };

@@ -3,23 +3,23 @@
 
 int Ring::AllRingsCount = 0;
 
-Ring::Ring(double outerRadius, double innerRadius, Point* center)
+Ring::Ring(double outerRadius, double innerRadius, double x, double y)
 {
 	this->SetRadiuses(outerRadius, innerRadius);
-	this->SetCenter(center);
+	this->SetCenter(x, y);
 	Ring::GrowAllRingsCount();
 }
 
 double Ring::AssertOnPositiveValue(double value)
 {
-	//TODO: ѕравильнее инвертировать условие и в первом блоке писать то, что €вл€етс€ стандартным процессом, а в else - уже нестандартное действие (бросание исключени€)
-	if (value < 0)
+	//TODO: ѕравильнее инвертировать условие и в первом блоке писать то, что €вл€етс€ стандартным процессом, а в else - уже нестандартное действие (бросание исключени€) (+)
+	if (value > 0)
 	{
-		throw exception("Value cannot be negative");
+		return value;
 	}
 	else
 	{
-		return value;
+		throw exception("Value cannot be negative");
 	}
 }
 
@@ -29,16 +29,16 @@ void Ring::SetRadiuses(double outerRadius, double innerRadius)
 	DoubleValidator::AssertPositiveValue(innerRadius);
 	if (innerRadius > outerRadius)
 	{
-		//TODO: RSDN - длина строки
-		throw exception("The internal radius cannot be greater than the external one, and the external radius cannot be less than the internal one");
+		//TODO: RSDN - длина строки (+)
+		throw exception("The internal radius cannot be greater than the external one");
 	}
 	this->_outerRadius = outerRadius;
 	this->_innerRadius = innerRadius;
 }
 
-void Ring::SetCenter(Point* center)
+void Ring::SetCenter(double x, double y)
 {
-	this->_center = center;
+	this->_center = new Point(x, y);
 }
 
 double Ring::GetOuterRadius()
@@ -84,4 +84,5 @@ int Ring::DecreaseAllRingsCount()
 Ring::~Ring()
 {
 	DecreaseAllRingsCount();
+	delete this->_center;
 }
