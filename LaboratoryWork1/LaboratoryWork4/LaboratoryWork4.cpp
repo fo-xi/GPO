@@ -7,6 +7,7 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "Rus");
+	//TODO: Экземпляр не нужен, т.к. класс - статический
 	GeometricProgram* geometricProgram = new GeometricProgram();
 	while (true)
 	{

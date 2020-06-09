@@ -1,7 +1,6 @@
 #include <exception>
 #include "CollisionManager.h"
 
-//TODO: Почему не ссылками? (переделать на диаграмме) (+)
 bool CollisionManager::IsCollision(Rectangle& rectangle1,
 	Rectangle& rectangle2)
 {
@@ -13,12 +12,11 @@ bool CollisionManager::IsCollision(Rectangle& rectangle1,
 		rectangle2.GetWidth();
 	double sumLengths = rectangle1.GetLength() -
 		rectangle2.GetLength();
-	//TODO: Можно сразу возвращать условие под if-ом (+)
+	
 	return (xCoordinatDifference < (sumWidths / 2) &&
 		yCoordinatDifference < (sumLengths / 2));
 }
 
-//TODO: Почему не ссылками? (переделать на диаграмме) (+)
 bool CollisionManager::IsCollision(Ring& ring1, Ring& ring2)
 {
 	double xCoordinatDifference = abs(ring1.GetCenter()->GetX() -
@@ -27,6 +25,6 @@ bool CollisionManager::IsCollision(Ring& ring1, Ring& ring2)
 		ring2.GetCenter()->GetY());
 	double hypotenuse = sqrt((pow(xCoordinatDifference, 2) +
 		pow(yCoordinatDifference, 2)));
-	//TODO: Можно сразу возвращать условие под if-ом (+)
+	
 	return (hypotenuse < (ring1.GetOuterRadius() - ring2.GetOuterRadius()));
 }
