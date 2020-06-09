@@ -16,7 +16,8 @@ class PaidUser : public User
 
 		Post* GetPosts();
 		int GetPostsCount();
-
+		//TODO: Константные ссылки?
 		PaidUser(int, string, string, Post*, int);
+	//TODO: Константные ссылки?
 		PaidUser(int, string, string);
 };

@@ -12,6 +12,7 @@ bool DoubleValidator::IsValuePositive(double value)
 
 bool DoubleValidator::IsYear(int value)
 {
+	//TODO: Дублируется ниже	
 	if ((value < 0) || (value > 2020))
 	{
 		return false;
@@ -36,6 +37,7 @@ bool DoubleValidator::IsLogin(string& value)
 
 bool DoubleValidator::IsCost(double value)
 {
+	//TODO: Дублируется разница только в границах
 	if ((value < 0) || (value > 100000))
 	{
 		return false;
@@ -45,6 +47,7 @@ bool DoubleValidator::IsCost(double value)
 
 bool DoubleValidator::IsPercent(double value)
 {
+	//TODO: Дублируется разница только в границах
 	if ((value < 0) || (value > 100))
 	{
 		return false;
@@ -73,6 +76,7 @@ void DoubleValidator::AssertYear(int value)
 {
 	if (!IsYear(value))
 	{
+		//TODO: RSDN - длина строки
 		throw exception("The year must be positive in the range from 0 to 2020 inclusive");
 	}
 }

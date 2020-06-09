@@ -1,6 +1,6 @@
 #include "Student.h"
 #include "DoubleValidator.h"
-
+//TODO: RSDN - длина строки
 Student::Student(string& name, string& surname, string& patronymic, int recordBookNumber, int yearReceipt)
 	: Person(name, surname, patronymic)
 {

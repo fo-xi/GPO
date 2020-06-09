@@ -10,11 +10,12 @@ class Post
 		string _title;
 		string _text;
 	public:
+		//TODO: Константные ссылки?
 		void SetTitle(string&);
 		void SetText(string&);
-
+		//TODO: Константные ссылки?
 		string GetTitle();
 		string GetText();
-
+		//TODO: Константные ссылки?
 		Post(string&, string&);
 };

@@ -1,5 +1,5 @@
 #include "Teacher.h"
-
+//TODO: RSDN - длинна строки
 Teacher::Teacher(string& name, string& surname, string& patronymic, string& position) : Person(name, surname, patronymic)
 {
 	SetPosition(position);
