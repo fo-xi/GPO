@@ -7,8 +7,7 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "Rus");
-	//TODO: Экземпляр не нужен, т.к. класс - статический
-	GeometricProgram* geometricProgram = new GeometricProgram();
+	//TODO: Экземпляр не нужен, т.к. класс - статический (+)
 	while (true)
 	{
 		system("cls");
@@ -22,19 +21,19 @@ int main()
 		{
 			case 1:
 			{
-				geometricProgram->DemoRing();
+				GeometricProgram::DemoRing();
 				system("pause");
 				break;
 			}
 			case 2:
 			{
-				geometricProgram->DemoRectangleWithPoint();
+				GeometricProgram::DemoRectangleWithPoint();
 				system("pause");
 				break;
 			}
 			case 3:
 			{
-				geometricProgram->DemoCollision();
+				GeometricProgram::DemoCollision();
 				system("pause");
 				break;
 			}
@@ -42,6 +41,5 @@ int main()
 			break;
 		}
 	}
-	delete geometricProgram;
 	return 0;
 }

@@ -28,9 +28,10 @@ void Ring::SetRadiuses(double outerRadius, double innerRadius)
 	DoubleValidator::AssertPositiveValue(innerRadius);
 	if (innerRadius > outerRadius)
 	{
-		//TODO: RSDN - длина строки
-		//TODO: Не исправлено
-		throw exception("The internal radius cannot be greater than the external one");
+		//TODO: RSDN - длина строки (+)
+		//TODO: Не исправлено (+)
+		throw exception
+		("The inner radius cannot be greater than the outer");
 	}
 	this->_outerRadius = outerRadius;
 	this->_innerRadius = innerRadius;

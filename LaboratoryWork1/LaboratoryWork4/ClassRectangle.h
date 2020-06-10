@@ -11,15 +11,15 @@ class Rectangle
 		double _length;
 		double _width;
 		Point* _center;
+
+		void SetCenter(double, double);
 	public:
 		Rectangle(double, double, double, double);
 		void SetLength(double);
 		void SetWidth(double);
-		void SetCenter(double, double);
 
 		double GetLength();
 		double GetWidth();
 		Point* GetCenter();
 		~Rectangle();
-
 };

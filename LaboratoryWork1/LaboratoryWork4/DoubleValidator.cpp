@@ -32,6 +32,7 @@ void DoubleValidator::AssertValueInRange(double value, double min, double max)
 {
 	if (!IsValueInRange(value, min, max))
 	{
-		throw exception("The value does not fall within the acceptable range!");
+		throw exception
+		("The value does not fall within the acceptable range!");
 	}
 }
