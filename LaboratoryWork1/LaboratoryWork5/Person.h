@@ -11,12 +11,12 @@ class Person
 		string _surname;
 		string _patronymic;
 	public:
-		Person(string&, string&, string&);
-		void SetName(string&);
-		void SetSurname(string&);
-		void SetPatronymic(string&);
+		Person(const string&, const string&, const string&);
+		void SetName(const string&);
+		void SetSurname(const string&);
+		void SetPatronymic(const string&);
 	
-		string GetName();
-		string GetSurname();
-		string GetPatronymic();
+		const string& GetName();
+		const string& GetSurname();
+		const string& GetPatronymic();
 };

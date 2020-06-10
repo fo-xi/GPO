@@ -9,7 +9,7 @@ PercentDiscount::PercentDiscount(CategoryType category, double percent)
 
 void PercentDiscount::SetPercent(double percent)
 {
-	DoubleValidator::AssertPercent(percent);
+	DoubleValidator::AssertValueRange(percent, 0, 100);
 	this->_percent = percent;
 }
 
@@ -18,13 +18,13 @@ double PercentDiscount::GetPercent()
 	return this->_percent;
 }
 
-double PercentDiscount::Calculate(Product* product)
+double PercentDiscount::Calculate(Product& product)
 {
-	if (product->GetCategory() == this->GetCategory())
+	if (product.GetCategory() == this->GetCategory())
 	{
 		int allPercentages = 100.00;
-		return (product->GetCost() *
+		return (product.GetCost() *
 			((allPercentages - this->GetPercent()) / allPercentages));
 	}
-	return product->GetCost();
+	return product.GetCost();
 }

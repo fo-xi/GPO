@@ -1,38 +1,39 @@
 #include "Person.h"
 
-Person::Person(string& name, string& surname, string& patronymic)
+Person::Person(const string& name, 
+	const string& surname, const string& patronymic)
 {
 	this->SetName(name);
 	this->SetSurname(surname);
 	this->SetPatronymic(patronymic);
 }
 
-void Person::SetName(string& name)
+void Person::SetName(const string& name)
 {
 	this->_name = name;
 }
 
-void Person::SetSurname(string& surname)
+void Person::SetSurname(const string& surname)
 {
 	this->_surname = surname;
 }
 
-void Person::SetPatronymic(string& patronymic)
+void Person::SetPatronymic(const string& patronymic)
 {
 	this->_patronymic = patronymic;
 }
 
-string Person::GetName()
+const string& Person::GetName()
 {
 	return this->_name;
 }
 
-string Person::GetSurname()
+const string& Person::GetSurname()
 {
 	return this->_surname;
 }
 
-string Person::GetPatronymic()
+const string& Person::GetPatronymic()
 {
 	return this->_patronymic;
 }

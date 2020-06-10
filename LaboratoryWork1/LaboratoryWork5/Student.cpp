@@ -1,7 +1,8 @@
 #include "Student.h"
 #include "DoubleValidator.h"
-//TODO: RSDN - длина строки
-Student::Student(string& name, string& surname, string& patronymic, int recordBookNumber, int yearReceipt)
+//TODO: RSDN - длина строки (+)
+Student::Student(const string& name, const string& surname, 
+	const string& patronymic, int recordBookNumber, int yearReceipt)
 	: Person(name, surname, patronymic)
 {
 	SetRecordBookNumber(recordBookNumber);
@@ -17,7 +18,7 @@ void Student::SetRecordBookNumber(int recordBookNumber)
 void Student::SetYearReceipt(int yearReceipt)
 {
 	DoubleValidator::AssertPositiveValue(yearReceipt);
-	DoubleValidator::AssertYear(yearReceipt);
+	DoubleValidator::AssertValueRange(yearReceipt, 0, 2020);
 	this->_yearReceipt = yearReceipt;
 }
 

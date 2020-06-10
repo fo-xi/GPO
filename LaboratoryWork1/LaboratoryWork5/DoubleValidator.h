@@ -8,15 +8,9 @@ static class DoubleValidator
 {
 	public:
 		static bool IsValuePositive(double);
-		static bool IsYear(int);
-		static bool IsLogin(string&);
-		static bool IsCost(double);
-		static bool IsPercent(double);
-		static bool IsAmount(double);
+		static bool IsValueRange(double, double, double);
+		static bool IsLogin(const string&);
 		static void AssertPositiveValue(double);
-		static void AssertYear(int);
-		static void AssertLogin(string&);
-		static void AssertCost(double);
-		static void AssertAmount(double);
-		static void AssertPercent(double);
+		static void AssertValueRange(double, double, double);
+		static void AssertLogin(const string&);
 };

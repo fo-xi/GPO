@@ -14,8 +14,8 @@ class DiscountBase
 		void SetCategory(CategoryType);
 	public:
 		CategoryType GetCategory();
-		//TODO:  акой смысл передавать по указателю?
-		virtual double Calculate(Product*) = 0;
+		//TODO:  акой смысл передавать по указателю? (+)
+		virtual double Calculate(Product&) = 0;
 	protected:
 		DiscountBase(CategoryType);
 };

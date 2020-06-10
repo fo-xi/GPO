@@ -1,11 +1,9 @@
 #include "PaidUser.h"
+#include "DoubleValidator.h"
 
 void PaidUser::SetPosts(Post* posts, int postsCount)
 {
-	if (postsCount < 0)
-	{
-		throw exception("Posts count must be more than 0");
-	}
+	DoubleValidator::AssertPositiveValue(postsCount);
 	_posts = posts;
 	_postsCount = postsCount;
 }
@@ -20,13 +18,14 @@ int PaidUser::GetPostsCount()
 	return _postsCount;
 }
 
-PaidUser::PaidUser(int id, string login, string password, Post* posts, int postsCount)
+PaidUser::PaidUser(int id, const string& login, 
+	const string& password, Post* posts, int postsCount)
 	: User(id, login, password)
 {
 	SetPosts(posts, postsCount);
 }
 
-PaidUser::PaidUser(int id, string login, string password)
+PaidUser::PaidUser(int id, const string& login, const string& password)
 	: PaidUser(id, login, password, nullptr, 0)
 {
 

@@ -12,5 +12,5 @@ class CertificateDiscount : public DiscountBase
 
 		double GetAmount();
 
-		double Calculate(Product*) override;
+		double Calculate(Product&) override;
 };

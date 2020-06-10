@@ -28,24 +28,16 @@ int main()
 		{
 			case 1:
 			{
-				string name = "Ilya";
-				string surname = "Ivanov";
-				string patronymic = "Igorevich";
-				Person* person = new Person(name, surname, patronymic);
-				ShowName(person);
+				Person* person = new Person("Ilya", "Ivanov", "Igorevich");
+				ShowName(*person);
 				delete person;
-				name = "Ivan";
-				surname = "Kuznetsov";
-				patronymic = "Sergeevich";
-				Student* student = new Student(name, surname, patronymic, 45902, 2013);
-				ShowName(student);
+				Student* student = new Student("Ivan", "Kuznetsov",
+					"Kuznetsov", 45902, 2013);
+				ShowName(*student);
 				delete student;
-				name = "Alexander";
-				surname = "Popov";
-				patronymic = "Dmitrievich";
-				string position = "Math Teacher";
-				Teacher* teacher = new Teacher(name, surname, patronymic, position);
-				ShowName(teacher);
+				Teacher* teacher = new Teacher("Alexander", "Popov", 
+					"Dmitrievich", "Math Teacher");
+				ShowName(*teacher);
 				delete teacher;
 				system("pause");
 				break;
@@ -53,49 +45,23 @@ int main()
 			case 2:
 			{
 				const int countUser = 4;
-
-				string login1 = "morkovka1995";
-				string login2 = "ilon_mask";
-				string login3 = "megazver";
-				string login4 = "yogurt";
-				string password1 = "1995morkovka";
-				string password2 = "X æ A-12";
-				string password3 = "password";
-				string password4 = "ksTPQzSu";
-
 				User** users = new User * [countUser]
 				{
-					new User(100000, login1, password1),
-					new User(100001, login2, password2),
-					new User(100002, login3, password3),
-					new User(100003, login4, password4),
+					new User(100000, "morkovka1995", "1995morkovka"),
+					new User(100001, "ilon_mask", "X æ A-12"),
+					new User(100002, "megazver", "password"),
+					new User(100003, "yogurt", "ksTPQzSu"),
 				};
-
-				login1 = "TheKnyazz";
-				login2 = "system_exe";
-				login3 = "RazorQ";
-				login4 = "schdub";
-				password1 = "JHPzPGFG";
-				password2 = "UgfkDGmU";
-				password3 = "TBgRnbCP";
-				password4 = "CetyQVID";
-
 				User** paidUsers = new User * [countUser]
 				{
-					new PaidUser(200000, login1, password1),
-					new PaidUser(200001, login2, password2),
-					new PaidUser(200002, login3, password3),
-					new PaidUser(200003, login4, password4),
+					new PaidUser(200000, "TheKnyazz", "JHPzPGFG"),
+					new PaidUser(200001, "system_exe", "UgfkDGmU"),
+					new PaidUser(200002, "RazorQ", "TBgRnbCP"),
+					new PaidUser(200003, "schdub", "CetyQVID"),
 				};
-
-				string login = "megazver";
-				string password = "password";
-				User* loginedUser = Login(users, 4, login, password);
+				User* loginedUser = Login(users, 4, "megazver", "password");
 				cout << "Signed in as: " << loginedUser->GetLogin() << endl;
-
-				login = "system_exe";
-				password = "UgfkDGmU";
-				User* loginedPaidUser = Login(paidUsers, 4, login, password);
+				User* loginedPaidUser = Login(paidUsers, 4, "system_exe", "UgfkDGmU");
 				cout << "Signed in as: " << loginedPaidUser->GetLogin() << endl;
 
 				for (int i = 0; i < countUser; i++)
@@ -116,18 +82,12 @@ int main()
 			case 3:
 			{
 				const int countProduct = 4;
-
-				string product1Name = "Potato";
-				string product2Name = "Sprite";
-				string product3Name = "Oil";
-				string product4Name = "Beef";
-
 				Product** products = new Product * [countProduct]
 				{
-					new Product(product1Name, Vegetables, 40000),
-					new Product(product2Name, Drinks, 2000),
-					new Product(product3Name, DairyProduce, 8000),
-					new Product(product4Name, Meat, 11000),
+					new Product("Potato", Vegetables, 40000),
+					new Product("Sprite", Drinks, 2000),
+					new Product("Oil", DairyProduce, 8000),
+					new Product("Beef", Meat, 11000),
 				};
 
 				PercentDiscount* percentDiscount1 = new PercentDiscount(Vegetables, 20.00);

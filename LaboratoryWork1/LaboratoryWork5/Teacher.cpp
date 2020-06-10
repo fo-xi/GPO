@@ -1,16 +1,18 @@
 #include "Teacher.h"
-//TODO: RSDN - длинна строки
-Teacher::Teacher(string& name, string& surname, string& patronymic, string& position) : Person(name, surname, patronymic)
+//TODO: RSDN - длинна строки (+)
+Teacher::Teacher(const string& name, const string& surname,
+	const string& patronymic, const string& position)
+	   : Person(name, surname, patronymic)
 {
 	SetPosition(position);
 }
 
-void Teacher::SetPosition(string& position)
+void Teacher::SetPosition(const string& position)
 {
 	this->_position = position;
 }
 
-string Teacher::GetPosition()
+const string& Teacher::GetPosition()
 {
 	return this->_position;
 }

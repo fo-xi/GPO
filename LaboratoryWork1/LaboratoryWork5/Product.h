@@ -12,14 +12,14 @@ class Product
 		CategoryType _category;
 		double _cost;
 	public:
-	//TODO: Константные ссылки?
-		Product(string&, CategoryType, double);
-	//TODO: Константные ссылки?
-		void SetProductName(string&);
+	//TODO: Константные ссылки? (+)
+		Product(const string&, CategoryType, double);
+	//TODO: Константные ссылки? (+)
+		void SetProductName(const string&);
 		void SetCategory(CategoryType);
 		void SetCost(double);
-	//TODO: Константные ссылки?
-		string GetProductName();
+	//TODO: Константные ссылки? (+)
+		const string& GetProductName();
 		CategoryType GetCategory();
 		double GetCost();
 };

@@ -12,16 +12,16 @@ class User
 		string _password;
 
 		void SetId(int);
-	public:
-	//TODO: Константные ссылки?
-		void SetLogin(string&);
-		void SetPassword(string&);
+	public: 
+		//TODO: Константные ссылки? (+)
+		void SetLogin(const string&);
+		void SetPassword(const string&);
 
 		int GetId();
-	//TODO: Константные ссылки?
-		string GetLogin();
-		string GetPassword();
-		//TODO: Константные ссылки?
-		User(int, string&, string&);
-		bool IsCorrectPassword(string&);
+		//TODO: Константные ссылки? (+)
+		const string& GetLogin();
+		const string& GetPassword();
+		//TODO: Константные ссылки? (+)
+		User(int, const string&, const string&);
+		bool IsCorrectPassword(const string&);
 };
