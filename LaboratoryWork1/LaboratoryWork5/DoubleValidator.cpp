@@ -13,7 +13,6 @@ bool DoubleValidator::IsValuePositive(double value)
 bool DoubleValidator::IsValueRange(double value, 
 	double initialBorder, double finalBorder)
 {
-	//TODO: Дублируется ниже (+)
 	if ((value < initialBorder) || (value > finalBorder))
 	{
 		return false;
@@ -49,7 +48,7 @@ void DoubleValidator::AssertValueRange(double value,
 {
 	if (!IsValueRange(value, initialBorder, finalBorder))
 	{
-		//TODO: RSDN - длина строки (+)
+		//TODO: Границы в сообщении исключения могут не соответствовать текущим
 		throw exception
 		("The year must in the range from 0 to 2020");
 	}

@@ -7,7 +7,6 @@ class Student : public Person
 		int _recordBookNumber;
 		int _yearReceipt;
 	public:
-	//TODO: Константные ссылки? (+)
 		Student(const string&, const string&, const string&, int, int);
 		void SetRecordBookNumber(int);
 		void SetYearReceipt(int);

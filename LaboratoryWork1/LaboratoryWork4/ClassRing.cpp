@@ -28,8 +28,6 @@ void Ring::SetRadiuses(double outerRadius, double innerRadius)
 	DoubleValidator::AssertPositiveValue(innerRadius);
 	if (innerRadius > outerRadius)
 	{
-		//TODO: RSDN - длина строки (+)
-		//TODO: Не исправлено (+)
 		throw exception
 		("The inner radius cannot be greater than the outer");
 	}
