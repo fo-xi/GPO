@@ -48,9 +48,9 @@ void DoubleValidator::AssertValueRange(double value,
 {
 	if (!IsValueRange(value, initialBorder, finalBorder))
 	{
-		//TODO: Границы в сообщении исключения могут не соответствовать текущим
+		//TODO: Границы в сообщении исключения могут не соответствовать текущим (+)
 		throw exception
-		("The year must in the range from 0 to 2020");
+		("The value does not fall within the acceptable range!");
 	}
 }
 
