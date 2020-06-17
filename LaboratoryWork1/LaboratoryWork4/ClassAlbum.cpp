@@ -19,7 +19,8 @@ void Album::SetYearManufacture(int yearManufacture)
 {
 	if ((yearManufacture < 0) || (yearManufacture > 2020))
 	{
-		throw exception("The year must be positive in the range from 0 to 2020 inclusive");
+		throw exception
+		("The year must be positive in the range from 0 to 2020 inclusive");
 	}
 	this->_yearManufacture = yearManufacture;
 }
