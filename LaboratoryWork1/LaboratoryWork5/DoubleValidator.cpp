@@ -48,7 +48,8 @@ void DoubleValidator::AssertValueRange(double value,
 {
 	if (!IsValueRange(value, initialBorder, finalBorder))
 	{
-		//TODO: Границы в сообщении исключения могут не соответствовать текущим (+)
+		//TODO: Границы в сообщении исключения могут не соответствовать текущим
+		//TODO: А почему бы не вывести значения границ?
 		throw exception
 		("The value does not fall within the acceptable range!");
 	}
