@@ -49,7 +49,8 @@ void DoubleValidator::AssertValueRange(double value,
 	if (!IsValueRange(value, initialBorder, finalBorder))
 	{
 		//TODO: √раницы в сообщении исключени€ могут не соответствовать текущим
-		//TODO: ј почему бы не вывести значени€ границ? (+)
+		//TODO: ј почему бы не вывести значени€ границ?
+		//TODO: Ёто надо было не тут выводить, а добавить в строку сообщени€ исключени€
 		cout << "Acceptable range of values: " << initialBorder 
 			 << " - " << finalBorder << endl;
 		throw exception
