@@ -27,6 +27,9 @@
     <ClCompile Include="DiscountBase.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="DoubleValidator.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
     <ClCompile Include="PaidUser.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -63,6 +66,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="DiscountBase.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleValidator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="PaidUser.h">

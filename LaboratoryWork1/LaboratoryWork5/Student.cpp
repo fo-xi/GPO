@@ -1,5 +1,5 @@
 #include "Student.h"
-#include <exception> 
+#include "DoubleValidator.h"
 
 Student::Student(const string& name, const string& surname, 
 	const string& patronymic, int recordBookNumber, int yearReceipt)
@@ -11,20 +11,14 @@ Student::Student(const string& name, const string& surname,
 
 void Student::SetRecordBookNumber(int recordBookNumber)
 {
-	if (recordBookNumber < 0)
-	{
-		throw exception("The value cannot be negative");
-	}
+	DoubleValidator::AssertPositiveValue(recordBookNumber);
 	this->_recordBookNumber = recordBookNumber;
 }
 
 void Student::SetYearReceipt(int yearReceipt)
 {
-	if ((yearReceipt < 0) || (yearReceipt > 2020))
-	{
-		throw exception
-		("The value does not fall within the range from 0 to 2020");
-	}
+	DoubleValidator::AssertPositiveValue(yearReceipt);
+	DoubleValidator::AssertValueRange(yearReceipt, 0, 2020);
 	this->_yearReceipt = yearReceipt;
 }
 

@@ -1,12 +1,9 @@
 #include "PaidUser.h"
-#include <exception> 
+#include "DoubleValidator.h"
 
 void PaidUser::SetPosts(Post* posts, int postsCount)
 {
-	if (postsCount < 0)
-	{
-		throw exception("The value cannot be negative");
-	}
+	DoubleValidator::AssertPositiveValue(postsCount);
 	_posts = posts;
 	_postsCount = postsCount;
 }

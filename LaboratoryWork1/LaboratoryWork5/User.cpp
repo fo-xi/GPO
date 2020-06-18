@@ -1,6 +1,5 @@
 #include "User.h"
-#include <exception> 
-
+#include "DoubleValidator.h"
 
 void User::SetId(int id)
 {
@@ -9,15 +8,7 @@ void User::SetId(int id)
 
 void User::SetLogin(const string& login)
 {
-	for (int i = 0; i < login.length(); i++)
-	{
-		if (login[i] == '{' || login[i] == '}' || login[i] == '<' || login[i] == '>' ||
-			login[i] == '>' || login[i] == '@' || login[i] == '#' || login[i] == '$' ||
-			login[i] == '%' || login[i] == '^' || login[i] == ':' || login[i] == '*')
-		{
-			throw exception("The login contains undesirable characters");
-		}
-	}
+	DoubleValidator::AssertLogin(login);
 	_login = login;
 }
 

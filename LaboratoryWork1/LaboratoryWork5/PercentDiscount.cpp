@@ -1,5 +1,5 @@
 #include "PercentDiscount.h"
-#include <exception>
+#include "DoubleValidator.h"
 
 PercentDiscount::PercentDiscount(CategoryType category, double percent)
 	: DiscountBase(category)
@@ -9,11 +9,7 @@ PercentDiscount::PercentDiscount(CategoryType category, double percent)
 
 void PercentDiscount::SetPercent(double percent)
 {
-	if ((percent < 0) || (percent > 100))
-	{
-		throw exception
-		("The value does not fall within the range from 0 to 100");
-	}
+	DoubleValidator::AssertValueRange(percent, 0, 100);
 	this->_percent = percent;
 }
 

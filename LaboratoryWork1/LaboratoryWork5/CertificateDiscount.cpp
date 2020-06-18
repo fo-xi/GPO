@@ -1,5 +1,5 @@
 #include "CertificateDiscount.h"
-#include <exception> 
+#include "DoubleValidator.h"
 
 CertificateDiscount::CertificateDiscount(CategoryType category, double amount)
 	: DiscountBase(category)
@@ -9,11 +9,7 @@ CertificateDiscount::CertificateDiscount(CategoryType category, double amount)
 
 void CertificateDiscount::SetAmount(double amount)
 {
-	if ((amount < 0) || (amount > 10000))
-	{
-		throw exception
-		("The value does not fall within the range from 0 to 10000");
-	}
+	DoubleValidator::AssertValueRange(amount, 0, 10000);
 	this->_amount = amount;
 }
 

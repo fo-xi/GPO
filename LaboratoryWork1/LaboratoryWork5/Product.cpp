@@ -1,5 +1,5 @@
 #include "Product.h"
-#include <exception> 
+#include "DoubleValidator.h"
 
 Product::Product(const string& productName, CategoryType category, double cost)
 {
@@ -20,11 +20,7 @@ void Product::SetCategory(CategoryType category)
 
 void Product::SetCost(double cost)
 {
-	if ((cost < 0) || (cost > 100000))
-	{
-		throw exception
-		("The value does not fall within the range from 0 to 100000");
-	}
+	DoubleValidator::AssertValueRange(cost, 0, 100000);
 	this->_cost = cost;
 }
 
