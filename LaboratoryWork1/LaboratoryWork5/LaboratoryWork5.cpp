@@ -28,25 +28,24 @@ int main()
 		{
 			case 1:
 			{
-				Person* person = new Person("Ilya", "Ivanov", "Igorevich");
-				ShowName(*person);
-				delete person;
-				Student* student;
 				try
 				{
-					student = new Student("Ivan", "Kuznetsov",
-						"Kuznetsov", 45902, 2013);
+					Person* person = new Person("Ilya", "Ivanov", "Igorevich");
+					ShowName(*person);
+					delete person;
+					Student* student = new Student("Ivan", "Kuznetsov",
+							"Kuznetsov", 45902, 2013);
 					ShowName(*student);
 					delete student;
+					Teacher* teacher = new Teacher("Alexander", "Popov",
+						"Dmitrievich", "Math Teacher");
+					ShowName(*teacher);
+					delete teacher;
 				}
 				catch (exception e)
 				{
 					cout << e.what() << endl;
 				}
-				Teacher* teacher = new Teacher("Alexander", "Popov", 
-					"Dmitrievich", "Math Teacher");
-				ShowName(*teacher);
-				delete teacher;
 				system("pause");
 				break;
 			}
@@ -89,29 +88,35 @@ int main()
 			}
 			case 3:
 			{
-				const int countProduct = 4;
-				Product** products = new Product * [countProduct]
+				try
 				{
-					new Product("Potato", Vegetables, 40000),
-					new Product("Sprite", Drinks, 2000),
-					new Product("Oil", DairyProduce, 8000),
-					new Product("Beef", Meat, 11000),
-				};
+					const int countProduct = 4;
+					Product** products = new Product * [countProduct]
+					{
+						new Product("Potato", Vegetables, 4000),
+						new Product("Sprite", Drinks, 2000),
+						new Product("Oil", DairyProduce, 8000),
+						new Product("Beef", Meat, 11000),
+					};
 
-				PercentDiscount* percentDiscount1 = new PercentDiscount(Vegetables, 20.00);
-				ShowCheckWithDiscount(percentDiscount1, products, countProduct);
-				delete percentDiscount1;
+					PercentDiscount* percentDiscount1 = new PercentDiscount(Vegetables, 20.00);
+					ShowCheckWithDiscount(percentDiscount1, products, countProduct);
+					delete percentDiscount1;
 
-				CertificateDiscount* certificateDiscount = new CertificateDiscount(Drinks, 1000.00);
-				ShowCheckWithDiscount(certificateDiscount, products, countProduct);
-				delete certificateDiscount;
+					CertificateDiscount* certificateDiscount = new CertificateDiscount(Drinks, 1000.00);
+					ShowCheckWithDiscount(certificateDiscount, products, countProduct);
+					delete certificateDiscount;
 
-				for (int i = 0; i < countProduct; i++)
-				{
-					delete products[i];
+					for (int i = 0; i < countProduct; i++)
+					{
+						delete products[i];
+					}
+					delete[] products;
 				}
-				delete[] products;
-
+				catch (exception e)
+				{
+					cout << e.what() << endl;
+				}
 				system("pause");
 				break;
 			}
