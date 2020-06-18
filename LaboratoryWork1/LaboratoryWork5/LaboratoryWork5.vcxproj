@@ -154,7 +154,6 @@
     <ClCompile Include="CertificateDiscount.cpp" />
     <ClCompile Include="CommonFunctions.cpp" />
     <ClCompile Include="DiscountBase.cpp" />
-    <ClCompile Include="DoubleValidator.cpp" />
     <ClCompile Include="LaboratoryWork5.cpp" />
     <ClCompile Include="PaidUser.cpp" />
     <ClCompile Include="PercentDiscount.cpp" />
@@ -171,7 +170,6 @@
     <ClInclude Include="CertificateDiscount.h" />
     <ClInclude Include="CommonFunctions.h" />
     <ClInclude Include="DiscountBase.h" />
-    <ClInclude Include="DoubleValidator.h" />
     <ClInclude Include="PaidUser.h" />
     <ClInclude Include="PercentDiscount.h" />
     <ClInclude Include="Person.h" />
