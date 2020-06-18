@@ -51,10 +51,9 @@ void DoubleValidator::AssertValueRange(double value,
 		//TODO: √раницы в сообщении исключени€ могут не соответствовать текущим
 		//TODO: ј почему бы не вывести значени€ границ?
 		//TODO: Ёто надо было не тут выводить, а добавить в строку сообщени€ исключени€
-		cout << "Acceptable range of values: " << initialBorder 
-			 << " - " << finalBorder << endl;
-		throw exception
-		("The value does not fall within the acceptable range!");
+		string message = "The value does not fall within the acceptable range from "
+			+ to_string(initialBorder) + " to " + to_string(finalBorder);
+		throw exception(message.c_str());
 	}
 }
 

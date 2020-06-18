@@ -31,10 +31,18 @@ int main()
 				Person* person = new Person("Ilya", "Ivanov", "Igorevich");
 				ShowName(*person);
 				delete person;
-				Student* student = new Student("Ivan", "Kuznetsov",
-					"Kuznetsov", 45902, 2013);
-				ShowName(*student);
-				delete student;
+				Student* student;
+				try
+				{
+					student = new Student("Ivan", "Kuznetsov",
+						"Kuznetsov", 45902, 2013);
+					ShowName(*student);
+					delete student;
+				}
+				catch (exception e)
+				{
+					cout << e.what() << endl;
+				}
 				Teacher* teacher = new Teacher("Alexander", "Popov", 
 					"Dmitrievich", "Math Teacher");
 				ShowName(*teacher);
